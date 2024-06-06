@@ -1,4 +1,4 @@
-# 6月4日 | 最新V2ray/Shadowrocket/Clash/SSR高速免费节点，最高速度18.8M/S  更新时间 2024-06-04 10:46:06
+# 6月6日 | 最新Clash/SSR/V2ray/Shadowrocket高速免费节点，最高速度18M/S  更新时间 2024-06-06 10:31:00
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://androidclash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://androidclash.github.io/uploads/2024/06/0-20240604.yaml
-- https://androidclash.github.io/uploads/2024/06/1-20240604.yaml
-- https://androidclash.github.io/uploads/2024/06/2-20240604.yaml
-- https://androidclash.github.io/uploads/2024/06/3-20240604.yaml
-- https://androidclash.github.io/uploads/2024/06/4-20240604.yml
+- https://androidclash.github.io/uploads/2024/06/0-20240606.yaml
+- https://androidclash.github.io/uploads/2024/06/1-20240606.yaml
+- https://androidclash.github.io/uploads/2024/06/2-20240606.yaml
+- https://androidclash.github.io/uploads/2024/06/3-20240606.yaml
+- https://androidclash.github.io/uploads/2024/06/4-20240606.yml
 
 ### V2ray订阅链接
 
-- https://androidclash.github.io/uploads/2024/06/0-20240604.txt
-- https://androidclash.github.io/uploads/2024/06/1-20240604.txt
-- https://androidclash.github.io/uploads/2024/06/2-20240604.txt
-- https://androidclash.github.io/uploads/2024/06/3-20240604.txt
-- https://androidclash.github.io/uploads/2024/06/4-20240604.txt
+- https://androidclash.github.io/uploads/2024/06/0-20240606.txt
+- https://androidclash.github.io/uploads/2024/06/1-20240606.txt
+- https://androidclash.github.io/uploads/2024/06/2-20240606.txt
+- https://androidclash.github.io/uploads/2024/06/3-20240606.txt
+- https://androidclash.github.io/uploads/2024/06/4-20240606.txt
 
 ## 更多clash节点订阅 ：
 
