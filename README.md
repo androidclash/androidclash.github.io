@@ -1,4 +1,4 @@
-# 7月13日 | 最新Clash/V2ray/Shadowrocket/SSR高速免费节点，最高速度20.7M/S  更新时间 2024-07-13 10:14:56
+# 7月13日 | 最新Shadowrocket/Clash/V2ray/SSR高速免费节点，最高速度22.9M/S  更新时间 2024-07-13 12:51:33
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://androidclash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
