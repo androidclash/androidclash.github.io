@@ -1,4 +1,4 @@
-# 10月14日 | 最新V2ray/Shadowrocket/SSR/Clash高速免费节点，最高速度21M/S，便宜机场推荐  更新时间 2024-10-14 10:47:40
+# 10月16日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度18.4M/S，便宜机场推荐  更新时间 2024-10-16 09:29:10
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://androidclash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://androidclash.github.io/uploads/2024/10/0-20241014.yaml
-- https://androidclash.github.io/uploads/2024/10/1-20241014.yaml
-- https://androidclash.github.io/uploads/2024/10/2-20241014.yaml
-- https://androidclash.github.io/uploads/2024/10/3-20241014.yaml
-- https://androidclash.github.io/uploads/2024/10/4-20241014.yml
+- https://androidclash.github.io/uploads/2024/10/0-20241016.yaml
+- https://androidclash.github.io/uploads/2024/10/1-20241016.yaml
+- https://androidclash.github.io/uploads/2024/10/2-20241016.yaml
+- https://androidclash.github.io/uploads/2024/10/3-20241016.yaml
+- https://androidclash.github.io/uploads/2024/10/4-20241016.yml
 
 ### V2ray订阅链接
 
-- https://androidclash.github.io/uploads/2024/10/0-20241014.txt
-- https://androidclash.github.io/uploads/2024/10/1-20241014.txt
-- https://androidclash.github.io/uploads/2024/10/2-20241014.txt
-- https://androidclash.github.io/uploads/2024/10/3-20241014.txt
-- https://androidclash.github.io/uploads/2024/10/4-20241014.txt
+- https://androidclash.github.io/uploads/2024/10/0-20241016.txt
+- https://androidclash.github.io/uploads/2024/10/1-20241016.txt
+- https://androidclash.github.io/uploads/2024/10/2-20241016.txt
+- https://androidclash.github.io/uploads/2024/10/3-20241016.txt
+- https://androidclash.github.io/uploads/2024/10/4-20241016.txt
 
 ## 更多clash节点订阅 ：
 
