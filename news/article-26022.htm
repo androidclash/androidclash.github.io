@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-26022.htm" />
+    <title>java list在哪个包_Java 中初始化 List 集合的 N 种方式！</title>
+        <meta name="description" content="List 是 Java 开发中经常会使用的集合，你们知道有哪些方式可以初始化一个 List 吗？这其中不缺乏一些坑，在此总结一下常用的方式。 1、常规方式List&nbsp;languages&nbs" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link"><span>关于</span></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><span>联系</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>java list在哪个包_Java 中初始化 List 集合的 N 种方式！</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>List 是 Java 开发中经常会使用的集合，你们知道有哪些方式可以初始化一个 List 吗？这其中不缺乏一些坑，在此总结一下常用的方式。</p> <p>1、常规方式List&nbsp;languages&nbsp;=&nbsp;new&nbsp;ArrayList&lt;&gt;();</p> <p>languages.add("Java");</p> <p>languages.add("PHP");</p> <p>languages.add("Python");</p> <p>System.out.println(languages);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;[Java,&nbsp;PHP,&nbsp;Python]</p> <p>这种就是我们平常用的最多最平常的方式了，没什么好说的，后面缺失的泛型类型在 JDK 7 之后就可以不用写具体的类型了，改进后会自动推断类型。</p> <p>2、Arrays 工具类List&nbsp;jdks&nbsp;=&nbsp;Arrays.asList("JDK6",&nbsp;"JDK8",&nbsp;"JDK10");</p> <p>System.out.println(jdks);&nbsp;&nbsp;&nbsp;//&nbsp;[JDK6,&nbsp;JDK8,&nbsp;JDK10]</p> <p>这种方式添加的是只读的，是不可变的 List，即不能添加、删除等操作，需要警惕。。</p> <p>如果要可变，那就使用 ArrayList 再包装一下，如下面所示。List&nbsp;numbers&nbsp;=&nbsp;new&nbsp;ArrayList&lt;&gt;(Arrays.asList("1",&nbsp;"2",&nbsp;"3"));</p> <p>numbers.add("4");</p> <p>System.out.println(numbers);</p> <p>包装一下，这就是可变的 ArrayList 了。</p> <p>3、Collections 工具类List&nbsp;apples&nbsp;=&nbsp;Collections.nCopies(3,&nbsp;"apple");</p> <p>System.out.println(apples);&nbsp;//&nbsp;[apple,&nbsp;apple,&nbsp;apple]</p> <p>这种方式添加的同样是只读的，是不可变的。</p> <p>老规则，如果要可变，使用 ArrayList 包装一遍。List&nbsp;dogs&nbsp;=&nbsp;new&nbsp;ArrayList&lt;&gt;(Collections.nCopies(3,&nbsp;"dog"));</p> <p>dogs.add("dog");</p> <p>System.out.println(dogs);</p> <p>还有初始化单个对象的 List 工具类，这种方式也是不可变的，集合内只能有一个元素，这种也用得很少啊。List&nbsp;cat&nbsp;=&nbsp;Collections.singletonList("cat");</p> <p>System.out.println(cat);</p> <p>还有设置集合为只读的。使用 unmodifiableList 方法。//&nbsp;使用&nbsp;Collections.unmodifiableList&nbsp;创建只读集合</p> <p>List&nbsp;list&nbsp;=&nbsp;new&nbsp;ArrayList&lt;&gt;();</p> <p>list.add("jack");</p> <p>list.add("tom");</p> <p>list.add("lily");</p> <p>List&nbsp;readList&nbsp;=&nbsp;Collections.unmodifiableList(list);</p> <p>4、匿名内部类List&nbsp;names&nbsp;=&nbsp;new&nbsp;ArrayList&lt;&gt;()&nbsp;{<!-- -->{<!-- --></p> <p>add("Tom");</p> <p>add("Sally");</p> <p>add("John");</p> <p>}};</p> <p>System.out.println(names);</p> <p>这种使用了匿名内部类的方式，一气喝成，是不是很高大上？看似高级，实现也没什么卵用。</p> <p>5、JDK8 StreamList&nbsp;colors&nbsp;=&nbsp;Stream.of("blue",&nbsp;"red",&nbsp;"yellow").collect(Collectors.toList());</p> <p>colors.add("beautiful");</p> <p>System.out.println(colors);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;[blue,&nbsp;red,&nbsp;yellow,&nbsp;beautiful]</p> <p>Stream 是 JDK 8 推出来的新概念，比集合还要更强大，还可以和集合互相转换。</p> <p>6、JDK 9 List.ofList&nbsp;cups&nbsp;=&nbsp;List.of("A",&nbsp;"B",&nbsp;"C");</p> <p>System.out.println(cups);</p> <p>这是 JDK 9 里面新增的 List 接口里面的静态方法，同样也是不可变的。</p> <p>7、Guava 工具包//&nbsp;使用&nbsp;Lists.newArrayList&nbsp;创建的集合非只读</p> <p>ArrayList&nbsp;list&nbsp;=&nbsp;Lists.newArrayList("java",&nbsp;"php",&nbsp;"javaScript",&nbsp;"h5",&nbsp;"jackson");</p> <p>//&nbsp;使用&nbsp;ImmutableList.of&nbsp;创建只读集合</p> <p>ImmutableList&nbsp;list&nbsp;=&nbsp;ImmutableList.of("jack",&nbsp;"tom",&nbsp;"lily");</p> <p>说到最后，还是 Guava 用的最爽，对于集合的控制也很多。</p> <p>更多内容，持续探索，你还知道哪些绝招呢？欢迎留言分享一下。。。。。。</p> </div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-25552.htm">动物疫苗厂家排名（动物疫苗企业名单）</a></p>
+                                        <p>下一个：<a href="/news/article-26024.htm">新手开什么店赚钱（新手开店开什么店最好）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-26022.htm" title="java list在哪个包_Java 中初始化 List 集合的 N 种方式！">java list在哪个包_Java 中初始化 List 集合的 N 种方式！</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-5-free-node-subscribe.htm" title="4月5日19.9M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接">4月5日19.9M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-25-shadowrocket-node.htm" title="4月25日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度18.9M/S">4月25日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度18.9M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-clash-node.htm" title="11月27日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度20.3M/S，便宜机场推荐">11月27日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度20.3M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-4-node-share-links.htm" title="5月4日 | 最新V2ray/Shadowrocket/Clash/SSR高速免费节点，最高速度20M/S">5月4日 | 最新V2ray/Shadowrocket/Clash/SSR高速免费节点，最高速度20M/S</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-clash-windows.htm" title="10月29日 | 最新V2ray/Shadowrocket/Clash/SSR高速免费节点，最高速度20.3M/S，便宜机场推荐">10月29日 | 最新V2ray/Shadowrocket/Clash/SSR高速免费节点，最高速度20.3M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-24618.htm" title="益宠生物科技有限公司官网（益宠堂官网）">益宠生物科技有限公司官网（益宠堂官网）</a></li>
+                        <li class="py-2"><a href="/news/article-24482.htm" title="夯实基础图解作用域链和闭包">夯实基础图解作用域链和闭包</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-13-free-shadowrocket-node.htm" title="4月13日18.2M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接">4月13日18.2M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-10-free-ssr-subscribe.htm" title="6月10日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度20M/S">6月10日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度20M/S</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
