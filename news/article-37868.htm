@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-37868.htm" />
+    <title>Java 超详细讲解数据结构的应用_java</title>
+        <meta name="description" content="目录  一.bfs 二.双端队列 三.算法题  1.kotori和迷宫 2.小红找红点 3.小红玩数组      一.bfs bfs（广度优先搜索），类似二叉树的层序遍历，利用队列完成。一般用于求最短" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link"><span>关于</span></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><span>联系</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>Java 超详细讲解数据结构的应用_java</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">一.bfs</a></li> <li><a href="#_label1" rel="nofollow">二.双端队列</a></li> <li><a href="#_label2" rel="nofollow">三.算法题</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_2_0" rel="nofollow">1.kotori和迷宫</a></li> <li><a href="#_lab2_2_1" rel="nofollow">2.小红找红点</a></li> <li><a href="#_lab2_2_2" rel="nofollow">3.小红玩数组 </a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>一.bfs</h2> <p>bfs（广度优先搜索），类似二叉树的层序遍历，利用队列完成。一般用于求最短路。</p> <p>图的最短路问题：</p> <p>给定一个无向图，每条边的长度都是1。求1号点到x号点的最短距离。 顶点数n  边数为m</p> <p>q次询问  输入x 输出1到x的最短距离。 若1号点到x不连通，则输出-1</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>二.双端队列</h2> <p>双端队列的应用（区间翻转）：</p> <p>对于长度为n的数组，给定一个长度为m的区间，区间初始位置为a[1]到a[m]。</p> <p>3种操作：</p> <ul> <li>区间右移（最右端不会超过a[n]）</li> <li>区间左移（最左端不会超过a[n]）</li> <li>区间内所有数翻转。</li> </ul> <p>q次操作后请你还原数组。</p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>三.算法题</h2> <p class="maodian"><a name="_lab2_2_0" rel="nofollow"></a></p> <h3>1.kotori和迷宫</h3> <p>难度⭐⭐</p> <p>知识点：bfs</p> <p>首先找到k字母，然后从k字母位置开始bfs。bfs过程中即可得到k到每个e的最短路程。（要注意走过的e不可继续往下走）</p> <p>题目描述：</p> <p>kotori在一个n*m迷宫里，迷宫的最外层被岩浆淹没，无法涉足，迷宫内有k个出口。kotori只能上下左右四个方向移动。她想知道有多少出口是她能到达的，最近的出口离她有多远？</p> <p>输入描述:</p> <p>第一行为两个整数n和m，代表迷宫的行和列数 (1≤n,m≤30)</p> <p>后面紧跟着n行长度为m的字符串来描述迷宫。'k'代表kotori开始的位置，'.'代表道路，'*'代表墙壁，'e'代表出口。保证输入合法。</p> <p>输出描述:</p> <p>若有出口可以抵达，则输出2个整数，第一个代表kotori可选择的出口的数量，第二个代表kotori到最近的出口的步数。（注意，kotori到达出口一定会离开迷宫）</p> <p>若没有出口可以抵达，则输出-1。</p> <p>示例1</p> <p>输入</p> <blockquote> <p>6 8</p> <p>e.*.*e.*</p> <p>.**.*.*e</p> <p>..*k**..</p> <p>***.*.e*</p> <p>.**.*.**</p> <p>*......e</p> </blockquote> <p>输出</p> <blockquote> <p>2 7</p> </blockquote> <p>说明</p> <p>可供选择坐标为[4,7]和[6,8]，到kotori的距离分别是8和7步。</p> <div class="ay1code"> <pre class="brush:java;">  import java.util.*;  import java.io.*;  public class Main{    public static void main(String[] args) throws IOException{      BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));      String[] s1 = bf.readLine().split(" ");      int n = Integer.parseInt(s1[0]);      int m = Integer.parseInt(s1[1]);      //建立地图、标记图      char[][] maze = new char[n][m];      boolean[][] visited = new boolean[n][m];      //纪录步数      int[][] dis = new int[n][m];      //纪录初始的坐标      int ki = 0, kj = 0;      for(int i = 0; i &lt; n; i++){        String s = bf.readLine();        for(int j = 0; j &lt; m; j++){           dis[i][j] = Integer.MAX_VALUE;           char c = s.charAt(j);           maze[i][j] = c;           if(c == 'k'){            ki = i;            kj = j;          }        }      }             int count = 0, min = Integer.MAX_VALUE;      Queue&lt;Integer&gt; queue = new ArrayDeque&lt;&gt;();      //二维数组的性质，保存了坐标，并且节省了空间      queue.add(ki * m + kj);      visited[ki][kj] = true;      dis[ki][kj]= 0;      while(!queue.isEmpty()){        int temp = queue.poll();        int tempi = temp / m, tempj = temp % m;        //支持八个方向的移动或者不移动（但是因为Math.abs(i - j) == 1限定了绝对值为1，所以变成了四个方向）        for(int i = -1; i &lt;= 1; i++){          for(int j = -1; j &lt;= 1; j++){            if(Math.abs(i - j) == 1 &amp;&amp; tempi + i &gt;= 0 &amp;&amp; tempi + i &lt; n &amp;&amp; tempj + j &gt;= 0 &amp;&amp; tempj + j &lt; m &amp;&amp; !visited[tempi + i][tempj + j]){              if(maze[tempi + i][tempj + j] == '.'){                visited[tempi + i][tempj + j] = true;                dis[tempi + i][tempj + j] = dis[tempi][tempj] + 1;                queue.add((tempi + i) * m + (tempj + j));              }              if(maze[tempi + i][tempj + j] == 'e'){                visited[tempi + i][tempj + j] = true;                dis[tempi + i][tempj + j] = dis[tempi][tempj] + 1;                min = Math.min(min, dis[tempi][tempj] + 1);                count++;              }            }          }        }       }      if(count == 0) System.out.print(-1);      else System.out.print(count + " " + min);    }  }</pre> </div> <p>思考：队列是怎么实现bfs的？</p> <p>1.起始点入队--&gt;2.将起始点四个方向的可达点入队--&gt;3.起始点出队。以此循序依次访问队列中的元素。</p> <p class="maodian"><a name="_lab2_2_1" rel="nofollow"></a></p> <h3>2.小红找红点</h3> <p>难度⭐⭐⭐</p> <p>知识点：bfs，多源最短路</p> <p>多源最短路的求法：在bfs开始之前将所有点都扔进队列，然后开始bfs即可。</p> <p>题目描述：</p> <p>小红拿到了一张无向图，有 n 个顶点和 m 条边。每条边的长度为 1 。 </p> <p>小红给一些顶点染成了红色。她想知道，对于每个顶点，到附近最近的红色点的距离为多少？</p> <p>输入描述:</p> <p>第一行输出两个正整数 n 和 m ，用空格隔开。分别代表顶点数和边数。</p> <p>第二行输入一个长度为 n 的字符串，代表每个顶点的染色情况。第 i 个字符为 'R' 代表被染成红色，为 'W' 代表未被染色。</p> <p>接下来的 m 行，每行两个正整数 x 和 y ，代表 x 和 y 有一条无向边相连。</p> <p>不保证图是整体连通的。不保证没有重边和自环。</p> <p>1&lt;=n,m&lt;=10^5</p> <p>输出描述:</p> <p>输出一行 n 个整数，代表从 1 到 n 每个顶点到最近的红色顶点的距离。若对于某点而言无论如何都走不到红色顶点，则输出 -1 。</p> <p>示例1:</p> <p>输入</p> <blockquote> <p>5 5</p> <p>RWWRW</p> <p>1 2</p> <p>3 3</p> <p>1 2</p> <p>2 5</p> <p>1 4</p> </blockquote> <p>输出</p> <blockquote> <p>0 1 -1 0 2</p> </blockquote> <p>说明</p> <p style="text-align: center;"><img fetchpriority="high" decoding="async" alt="" height="464" src="http://img.555519.xyz/uploads3/20220424/586f90c6e7214fa2cd2b3d670e7197f1.jpg"></p> <p>样例的图如上所示。</p> <div class="ay1code"> <pre class="brush:java;">  import java.util.*;  import java.io.*;     public class Main{      static ArrayList&lt;Integer&gt;[] g;      static String[] strings;      static int[] visited;      static int[] dis;         public static void main(String[] args) throws Exception {          BufferedReader br = new BufferedReader(new InputStreamReader(System.in));          String[] firstLine = br.readLine().split(" ");          int n = Integer.parseInt(firstLine[0]);          int m = Integer.parseInt(firstLine[1]);          g = new ArrayList[n+1];          visited = new int[n+1];          dis= new int[n+1];          for (int i=1;i&lt;n+1;i++) {              g[i] = new ArrayList&lt;Integer&gt;();          }          //一个字符一个字符的读取          strings = br.readLine().split("");          for (int i=0;i&lt;m;i++) {              //描绘双向图              String[] temp = br.readLine().split(" ");              int x = Integer.parseInt(temp[0]);              int y = Integer.parseInt(temp[1]);              g[x].add(y);              g[y].add(x);          }          //g[x]代表当前点 g[x].get(i)代表所连的线          Queue&lt;Integer&gt; queue = new ArrayDeque&lt;&gt;();          for(int i=1;i&lt;=n;i++){              if(strings[i-1].equals("R")){                  queue.add(i);                  visited[i]=1;              }          }          while(!queue.isEmpty()){              int temp=queue.remove();              for(int i=0;i&lt;g[temp].size();i++){                  if(visited[g[temp].get(i)]==0){                      visited[g[temp].get(i)]=1;                      dis[g[temp].get(i)]=dis[temp]+1;                      queue.add(g[temp].get(i));                  }              }          }          for(int i=1;i&lt;=n;i++){              if(visited[i]==0)System.out.print("-1 ");              else System.out.print(dis[i]+" ");          }      }  }</pre> </div> <p>对照上一章的案例：小红点点点结合理解。  分别使用的dfs和bfs。</p> <p>本题思想：先将红色的所有点都入队列，然后bfs。</p> <p>这是一种逆向思维：不是所谓的从编号开始，并且所有走过的都不能在走了。</p> <p class="maodian"><a name="_lab2_2_2" rel="nofollow"></a></p> <h3>3.小红玩数组 </h3> <p>难度⭐⭐⭐⭐</p> <p>知识点：双端队列</p> <p>用一个双端队列来模拟过程，用一个变量来标记双端队列是否翻转过。</p> <p style="text-align: center;"><img decoding="async" alt="" height="321" src="http://img.555519.xyz/uploads3/20220424/3781b8f239b245a7de38ffe83a9ba499.jpg"></p> <p style="text-align: center;"><img decoding="async" alt="" height="294" src="http://img.555519.xyz/uploads3/20220424/d1a26e18c37beefc47b107df8bdb02f1.jpg"></p> <p>示例1：</p> <p>输入</p> <blockquote> <p>6 4</p> <p>1 5 4 6 2 8</p> <p>5</p> <p>21323</p> </blockquote> <p>输出</p> <blockquote> <p>4 6 2 1 5 8</p> </blockquote> <div class="ay1code"> <pre class="brush:java;">  import java.io.*;  import java.util.*;  public class Main{      static Deque&lt;Integer&gt; workQueue;      public static void main(String[] args)throws IOException{          BufferedReader br=new BufferedReader(new InputStreamReader(System.in));          PrintWriter pw=new PrintWriter(System.out);          String[] firstLine=br.readLine().split(" ");          int total=Integer.parseInt(firstLine[0]);          int size=Integer.parseInt(firstLine[1]);          int[] arr=new int[total];          String[] secondLine=br.readLine().split(" ");          for(int i=0;i&lt;total;i++){              arr[i]=Integer.parseInt(secondLine[i]);          }          int L=0;          int R=size-1;          workQueue=new LinkedList&lt;&gt;();          for(int i=0;i&lt;size;i++){              workQueue.offerLast(arr[i]);          }          int times=Integer.parseInt(br.readLine());          String tries=br.readLine();          int is=0;//0代表没有翻转！          for(int i=0;i&lt;times;i++){              if(tries.charAt(i)=='1'){                  if(R==arr.length-1)                      continue;                  R++;                  if(is==0){                         workQueue.offerLast(arr[R]);                      int tmp=workQueue.pollFirst();                      arr[L]=tmp;                     }else{                         workQueue.offerFirst(arr[R]);                      int tmp=workQueue.pollLast();                      arr[L]=tmp;                     }                  L++;              }else if(tries.charAt(i)=='2'){                  if(L==0)                      continue;                  L--;                  if(is==0){                      workQueue.offerFirst(arr[L]);                         arr[R]=workQueue.pollLast();                     }else{                         workQueue.offerLast(arr[L]);                      arr[R]=workQueue.pollFirst();                        }                  R--;              }else{                  is=1-is;              }          }          for(int i=0;i&lt;L;i++){              pw.print(arr[i]+" ");          }          if(is==0){              while(!workQueue.isEmpty()) {                  pw.print(workQueue.pollFirst() + " ");              }          }else{              while(!workQueue.isEmpty()) {                  pw.print(workQueue.pollLast() + " ");              }          }          for(int i=R+1;i&lt;arr.length;i++){              pw.print(arr[i]+" ");          }          pw.flush();         }  }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-37390.htm">torch报错TypeError: can&#8217;t convert CUDA tensor to numpy. Use Tensor.cpu() to copy the tensor</a></p>
+                                        <p>下一个：<a href="/news/article-37869.htm">宠福鑫动物医院好不好 宠福鑫动物医院怎么样</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-36407.htm" title="兽用和人用针剂的区别是什么（兽用的针剂和人用的是一样的吗）">兽用和人用针剂的区别是什么（兽用的针剂和人用的是一样的吗）</a></li>
+                        <li class="py-2"><a href="/news/article-33547.htm" title="被猫咬出血了该怎么办（被猫咬出血了有什么症状）">被猫咬出血了该怎么办（被猫咬出血了有什么症状）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-clash-subscribe.htm" title="11月29日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度22.8M/S，便宜机场推荐">11月29日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度22.8M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-19563.htm" title="动物防疫疫苗中标公告查询 动物防疫疫苗中标公告查询官网">动物防疫疫苗中标公告查询 动物防疫疫苗中标公告查询官网</a></li>
+                        <li class="py-2"><a href="/news/article-25084.htm" title="SpringBoot/Cloud项目-前台上传图片文件，Java转成Base64保存到数据库完整代码">SpringBoot/Cloud项目-前台上传图片文件，Java转成Base64保存到数据库完整代码</a></li>
+                        <li class="py-2"><a href="/news/article-30088.htm" title="动物疫苗生产原料是什么（动物疫苗的生产）">动物疫苗生产原料是什么（动物疫苗的生产）</a></li>
+                        <li class="py-2"><a href="/news/article-19105.htm" title="在K8s上部署Redis 集群">在K8s上部署Redis 集群</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-clash-windows.htm" title="11月14日 | 最新Clash/Shadowrocket/SSR/V2ray高速免费节点，最高速度18.7M/S，便宜机场推荐">11月14日 | 最新Clash/Shadowrocket/SSR/V2ray高速免费节点，最高速度18.7M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-clash-v2ray-ss-ssr.htm" title="12月11日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度21.4M/S，安卓Clash机场推荐">12月11日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度21.4M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-20476.htm" title="开宠物医院需要资质吗（想开个宠物医院需要考什么证）">开宠物医院需要资质吗（想开个宠物医院需要考什么证）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

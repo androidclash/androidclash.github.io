@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-37389.htm" />
+    <title>springboot实现定时任务-Scheduling</title>
+        <meta name="description" content="cron为cron表达式，用来表示该任务在日期时间维度执行频率，详细可参考cron表达式的文章 fixedRate:代表该任务的执行频率，单位毫秒，无论任务执行耗时多久，总是以该频率执行任务 fixe" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link"><span>关于</span></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><span>联系</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>springboot实现定时任务-Scheduling</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>cron为cron表达式，用来表示该任务在日期时间维度执行频率，详细可参考cron表达式的文章</p> <p>fixedRate:代表该任务的执行频率，单位毫秒，无论任务执行耗时多久，总是以该频率执行任务</p> <p>fixedDelay:代表该任务的执行频率，单位毫秒，在上一次任务执行完后等待x毫秒后执行下次任务</p> </h1> <p>前提：springboot通过scheduling实现的定时任务使用的线程有自己的线程池，默认大小为1，此时无法满足多个定时任务的情形，因此通常需要手动设置线程池的大小，以10为例。</p> <p>有以下三种情形</p> <p>1.使用fixedRate属性不加@Async注解、使用fixedRate属性加@Async注解</p> <p>2.使用cron不加@Async注解、使用cron属性加@Async注解</p> <p>3.使用fixedDelay不加@Async注解</p> <pre><code class="language-java">@Component @EnableAsync @Slf4j public class ScheduledTasks {      @Scheduled(fixedDelay = 3000) //    @Scheduled(fixedRate = 3000) //    @Scheduled(cron = "0/3 * * * * ?") //    @Async(value = "myAsync")     void contextLoads() throws InterruptedException {         log.info("scheduled1 wait start");         Thread.sleep(4000);         log.info("scheduled1 wait end");         log.info("scheduled task run....      " + Thread.currentThread().getName());     }  //    @Scheduled(cron = "0/3 * * * * ?")     @Scheduled(fixedDelay = 3000) //    @Scheduled(fixedRate = 3000) //    @Async(value = "myAsync")     void scheduled2() throws InterruptedException {         log.info("scheduled2 wait start");         Thread.sleep(4000);         log.info("scheduled2 wait end");         log.info("scheduled task2 run....      " + Thread.currentThread().getName());     } }</code></pre> </h1> <h3>1.使用fixedRate加@Async注解和使用cron加@Async注解效果相同</h3> <p>会实现无论任务执行耗时多久，下次任务始终会以规定的频率执行；</p> <p>上述例子中若为fixedRate，则下次任务开始执行始终是在上次任务开始后的三秒；</p> <p>若为cron，则下次任务开始执行始终为上次任务开始执行后的三秒，也就是上次任务开始时间为10:23:02，则下次任务开始时间为10:23:05，此种情况不受任务执行耗时影响。</p> <h3>2.使用fixedRate不加@Async注解</h3> <p>此时若每次任务执行耗时比fixedRate的值小，则会在上次任务开始后的fixedRate毫秒后开始执行下次任务；</p> <p>若每次执行任务耗时比fixedRate的值大，则会在上次任务执行后立刻执行下次任务，因为此时已经超过规定的执行频率的时间，因此需要立刻执行下次任务。</p> <h3>3.使用cron不加@Async注解</h3> <p>此时若每次任务执行耗时比cron表达式所表示的上次任务开始时间与下次任务开始时间的间隔小，则会以cron表达式表示的频率执行任务；</p> <p>若每次任务执行耗时比cron表达式所表示的上次任务开始时间与下次任务开始时间的间隔大，则下次任务会在上次任务执行完成后再到达cron表达式所表示的任务开始执行的时刻开始执行任务，例如上述例子中上次任务开始时间为10:23:02，任务执行耗时4s，而以cron表达式表示的频率下次的执行时间为10:23:05，但是此时上次任务并没有执行完成，上次任务执行完成的时间为10:23:06，因此下次任务执行需要等到cron表达式表示的下一次任务执行的时刻也就是10:23:08.</p> <h3>4.使用fixedDelay不加@Async注解</h3> <p>使用fixedDelay属性时不能加@Async注解，否则会报错。</p> <p>此时无论任务执行耗时是多少，下次任务开始执行的时间总是上次任务执行完成后的fixedDelay毫秒。</p> <h3>5.当有多个定时任务时，在保证定时任务线程池数以及异步线程池数足够的情况下，多个定时任务同样遵循上述结论。</h3> <h3>6.上述结论中1和4是比较符合开发需要的两种场景。</h3> </h1> <h3>1.修改定时任务默认的线程池大小</h3> <p>方式一：修改配置文件application.yml&nbsp;</p> <pre><code class="language-java">spring.task.scheduling.pool.size = 10</code></pre> <p>方式二：配置类</p> <pre><code class="language-java">@Configuration public class ScheduleConfig implements SchedulingConfigurer {     @Override     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {         taskRegistrar.setScheduler(Executors.newScheduledThreadPool(50));     } }</code></pre> <h3>2.自定义定时任务的线程池</h3> <pre><code class="language-java">@Configuration public class ScheduleConfig {       /**      * 此处方法名为Bean的名字，方法名无需固定      * 因为是按TaskScheduler接口自动注入      */     @Bean     public TaskScheduler taskScheduler(){         // Spring提供的定时任务线程池类         ThreadPoolTaskScheduler taskScheduler=new ThreadPoolTaskScheduler();         //设定最大可用的线程数目         taskScheduler.setPoolSize(10);         return taskScheduler;     } }</code></pre> <h3>3.自定义异步任务线程池</h3> <pre><code class="language-java">@Component public class AsyncScheduledTaskConfig {      @Bean     public Executor myAsync() {         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();         //最大线程数         executor.setMaxPoolSize(100);         //核心线程数         executor.setCorePoolSize(10);         //任务队列的大小         executor.setQueueCapacity(10);         //线程前缀名         executor.setThreadNamePrefix("task-thread");         //线程存活时间         executor.setKeepAliveSeconds(30);          /**          * 拒绝处理策略          * CallerRunsPolicy()：交由调用方线程运行，比如 main 线程。          * AbortPolicy()：直接抛出异常。          * DiscardPolicy()：直接丢弃。          * DiscardOldestPolicy()：丢弃队列中最老的任务。          */         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());         //线程初始化         executor.initialize();         return executor;     } } </code></pre> <p>使用时只需在@Async注解中使用value属性指定线程线程池名称，也就是bean的名称，上述默认为方法名</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-36902.htm">让猫挠了轻微出血,打几针?（让猫挠了轻微出血多久***）</a></p>
+                                        <p>下一个：<a href="/news/article-37390.htm">torch报错TypeError: can&#8217;t convert CUDA tensor to numpy. Use Tensor.cpu() to copy the tensor</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-clash-v2ray-ss-ssr.htm" title="10月8日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度18.9M/S">10月8日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度18.9M/S</a></li>
+                        <li class="py-2"><a href="/news/article-20477.htm" title="宠物粮加工厂加盟电话地址（宠物粮加工厂加盟电话地址在哪里）">宠物粮加工厂加盟电话地址（宠物粮加工厂加盟电话地址在哪里）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-clash-windows.htm" title="11月14日 | 最新Clash/Shadowrocket/SSR/V2ray高速免费节点，最高速度18.7M/S，便宜机场推荐">11月14日 | 最新Clash/Shadowrocket/SSR/V2ray高速免费节点，最高速度18.7M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-32592.htm" title="领养狗狗app有哪些（领养狗狗app有哪些软件）">领养狗狗app有哪些（领养狗狗app有哪些软件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-clash.htm" title="1月7日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度22.3M/S，安卓Clash机场推荐">1月7日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度22.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-clash-subscribe.htm" title="11月29日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度22.8M/S，便宜机场推荐">11月29日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度22.8M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-26485.htm" title="让猫挠了出一点点血有事吗（让猫挠了出血有什么症状）">让猫挠了出一点点血有事吗（让猫挠了出血有什么症状）</a></li>
+                        <li class="py-2"><a href="/news/article-19105.htm" title="在K8s上部署Redis 集群">在K8s上部署Redis 集群</a></li>
+                        <li class="py-2"><a href="/news/article-21396.htm" title="动物医院的单位性质 动物医院的单位性质是什么">动物医院的单位性质 动物医院的单位性质是什么</a></li>
+                        <li class="py-2"><a href="/news/article-25552.htm" title="动物疫苗厂家排名（动物疫苗企业名单）">动物疫苗厂家排名（动物疫苗企业名单）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
