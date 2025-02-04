@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://androidclash.github.io/news/article-38851.htm" />
@@ -7,7 +7,36 @@
         <meta name="description" content="问题： 我遇到了一个有趣的问题，它的代码大概是这样的。 List&lt;Func&lt;int&gt;&gt;&nbsp;actions&nbsp;=&nbsp;new&nbsp;List&lt;Fu" />
         <meta charset="utf-8">
     <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="AndroidClash官方订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://androidclash.github.io/news/article-38851.htm" />
+    <meta property="og:site_name" content="AndroidClash官方订阅站" />
+    <meta property="og:title" content="如何在 C# 循环中捕获局部变量？" />
+    <meta property="og:image" content="https://androidclash.github.io/uploads/20240305/796948e38c990ae35ca94b72ddf7bcba.webp" />
+        <meta property="og:release_date" content="2025-01-11T10:02:23" />
+    <meta property="og:updated_time" content="2025-01-11T10:02:23" />
+        <meta property="og:description" content="问题： 我遇到了一个有趣的问题，它的代码大概是这样的。 List&lt;Func&lt;int&gt;&gt;&nbsp;actions&nbsp;=&nbsp;new&nbsp;List&lt;Fu" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="如何在 C# 循环中捕获局部变量？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
@@ -84,16 +113,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-26484.htm" title="免费领养小猫崽 免费领养小猫崽再送一只小奶狗">免费领养小猫崽 免费领养小猫崽再送一只小奶狗</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-11-clash-v2ray-ss-ssr.htm" title="12月11日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度21.4M/S，安卓Clash机场推荐">12月11日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度21.4M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-37869.htm" title="宠福鑫动物医院好不好 宠福鑫动物医院怎么样">宠福鑫动物医院好不好 宠福鑫动物医院怎么样</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-8-clash-node-daily-updates.htm" title="12月8日 | 最新Shadowrocket/Clash/SSR/V2ray高速免费节点，最高速度20.7M/S，便宜机场推荐">12月8日 | 最新Shadowrocket/Clash/SSR/V2ray高速免费节点，最高速度20.7M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-25-clash-node.htm" title="10月25日 | 最新Shadowrocket/SSR/Clash/V2ray高速免费节点，最高速度19.2M/S，便宜机场推荐">10月25日 | 最新Shadowrocket/SSR/Clash/V2ray高速免费节点，最高速度19.2M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-22-shadowrocket-node.htm" title="12月22日 | 最新Clash/SSR/Shadowrocket/V2ray高速免费节点，最高速度20.1M/S，安卓Clash机场推荐">12月22日 | 最新Clash/SSR/Shadowrocket/V2ray高速免费节点，最高速度20.1M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-20935.htm" title="重庆宠物领养中心官网电话（重庆宠物领养中心官网电话地址）">重庆宠物领养中心官网电话（重庆宠物领养中心官网电话地址）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-30-clash-node-daily-updates.htm" title="11月30日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度19M/S，便宜机场推荐">11月30日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度19M/S，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-18610.htm" title="什么牌子的红酒好喝又不贵(什么牌子的红酒好喝质量好)">什么牌子的红酒好喝又不贵(什么牌子的红酒好喝质量好)</a></li>
-                        <li class="py-2"><a href="/news/article-37390.htm" title="torch报错TypeError: can&#8217;t convert CUDA tensor to numpy. Use Tensor.cpu() to copy the tensor">torch报错TypeError: can&#8217;t convert CUDA tensor to numpy. Use Tensor.cpu() to copy the tensor</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-free-node-subscribe.htm" title="11月7日 | 最新Clash/Shadowrocket/SSR/V2ray高速免费节点，最高速度22.1M/S，便宜机场推荐">11月7日 | 最新Clash/Shadowrocket/SSR/V2ray高速免费节点，最高速度22.1M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-38852.htm" title="被小猫抓了多久过安全期（被小猫抓了多久会发病）">被小猫抓了多久过安全期（被小猫抓了多久会发病）</a></li>
+                        <li class="py-2"><a href="/news/article-33095.htm" title="家养猫***多少钱（家养猫***多少钱一次）">家养猫***多少钱（家养猫***多少钱一次）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-clash-node-daily-updates.htm" title="12月28日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.2M/S，安卓Clash机场推荐">12月28日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.2M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-31140.htm" title="动物疫苗可以自己打吗现在（动物疫苗可以自己打吗现在疫情）">动物疫苗可以自己打吗现在（动物疫苗可以自己打吗现在疫情）</a></li>
+                        <li class="py-2"><a href="/news/article-45298.htm" title="vue原生方法自定义右键菜单_vue.js_">vue原生方法自定义右键菜单_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-36408.htm" title="动物诊疗许可证经营范围（动物诊疗许可证经营范围有哪些）">动物诊疗许可证经营范围（动物诊疗许可证经营范围有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-26946.htm" title="动物疫苗新规定有哪些种类型（动物疫苗接种途径有哪些）">动物疫苗新规定有哪些种类型（动物疫苗接种途径有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-clash-node.htm" title="11月27日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度20.3M/S，便宜机场推荐">11月27日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度20.3M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-42814.htm" title="动物疫苗多少钱打一次猫 动物疫苗多少钱打一次猫猫">动物疫苗多少钱打一次猫 动物疫苗多少钱打一次猫猫</a></li>
                     </ul>
     </div>
 </div>
@@ -105,16 +134,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -162,7 +191,8 @@
     <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
     <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
     <script src="/assets/website/js/frontend/androidclash/main.js"></script>
-    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
 </body>
 
 </html>
