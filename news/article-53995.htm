@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-53995.htm" />
+    <title>Android中EditText光标的显示与隐藏方法</title>
+        <meta name="description" content="目录  Android EditText的光标的显示和隐藏 Android之第一次不显示EditText光标 总结   Android EditText的光标的显示和隐藏 一、java代码 1.编辑框" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="AndroidClash官方订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://androidclash.github.io/news/article-53995.htm" />
+    <meta property="og:site_name" content="AndroidClash官方订阅站" />
+    <meta property="og:title" content="Android中EditText光标的显示与隐藏方法" />
+    <meta property="og:image" content="https://androidclash.github.io/uploads/20240305/990e932fe58a27a8a0eb695749fd4e82.webp" />
+        <meta property="og:release_date" content="2025-02-10T07:36:42" />
+    <meta property="og:updated_time" content="2025-02-10T07:36:42" />
+        <meta property="og:description" content="目录  Android EditText的光标的显示和隐藏 Android之第一次不显示EditText光标 总结   Android EditText的光标的显示和隐藏 一、java代码 1.编辑框" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Android中EditText光标的显示与隐藏方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>Android中EditText光标的显示与隐藏方法</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>目录</p> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jb51.net/article/226919.htm#_label0"  title="Android EditText的光标的显示和隐藏" rel="nofollow">Android EditText的光标的显示和隐藏</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jb51.net/article/226919.htm#_label1"  title="Android之第一次不显示EditText光标" rel="nofollow">Android之第一次不显示EditText光标</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jb51.net/article/226919.htm#_label2"  title="总结" rel="nofollow">总结</a></li> </ul> <p><a name="_label0" rel="nofollow"></a></p> <h2 id="heading-0">Android EditText的光标的显示和隐藏</h2> <p><strong>一、java代码</strong></p> <p>1.编辑框的光标 显示的方法：</p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> </td> <td> <p><code>editText.setCursorVisible(</code><code>true</code><code>);</code></p> </td> </tr> </tbody> </table> <p>2.编辑框的光标 隐藏的方法：</p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> </td> <td> <p><code>editText.setCursorVisible(</code><code>false</code><code>);</code></p> </td> </tr> </tbody> </table> <p><strong>二、xml代码</strong></p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> <p>2</p> </td> <td> <p><code>android:cursorVisible="true"</code></p> <p><code>&lt;!--或者“false”--&gt;</code></p> </td> </tr> </tbody> </table> <p><strong>三、点击编辑框的时候显示光标，没有点击的时候隐藏，可以使用如下</strong></p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> <p>2</p> <p>3</p> <p>4</p> <p>5</p> <p>6</p> <p>7</p> <p>8</p> <p>9</p> <p>10</p> <p>11</p> </td> <td> <p><code>EditText editText = (EditText) findViewById(R.id.edittext);</code></p> <p><code>editText.setCursorVisible(</code><code>false</code><code>);</code></p> <p><code>editText.setOnTouchListener(</code><code>new</code> <code>View.OnTouchListener() {<!-- --></code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>@Override</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>public</code> <code>boolean</code> <code>onTouch(View v, MotionEvent event) {<!-- --></code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code>if</code> <code>(MotionEvent.ACTION_DOWN == event.getAction()) {<!-- --></code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code>editText.setCursorVisible(</code><code>true</code><code>);</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code>}</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code>return</code> <code>false</code><code>;</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>}</code></p> <p><code>});</code></p> </td> </tr> </tbody> </table> <p><a name="_label1" rel="nofollow"></a></p> <h2 id="heading-1">Android之第一次不显示EditText光标</h2> <p>光标会默认显示在第一个EditText框中，如果不想显示光标，且也不想把该光标移动到下一个EditText框。</p> <p><strong>解决方法</strong></p> <p>在该 EditText之前增加一个不可见的LinearLayout</p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> <p>2</p> <p>3</p> <p>4</p> <p>5</p> </td> <td> <p><code>&lt;LinearLayout </code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>android:focusable=</code><code>"true"</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>android:focusableInTouchMode=</code><code>"true"</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>android:layout_width=</code><code>"0px"</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>android:layout_height=</code><code>"0px"</code> <code>/&gt;</code></p> </td> </tr> </tbody> </table> <p><a name="_label2" rel="nofollow"></a></p> <h2 id="heading-2">总结</h2> <p>到此这篇关于Android中EditText光标的显示与隐藏方法的文章就介绍到这了,更多相关Android EditText光标内容请搜索脚本之家以前的文章或继续浏览下面的相关文章希望大家以后多多支持脚本之家！</p> <p>转载于：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jb51.net/article/226919.htm"  title="https://www.jb51.net/article/226919.htm" rel="nofollow">https://www.jb51.net/article/226919.htm</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53994.htm">FUNCTION XXX does not exist</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-37868.htm" title="Java 超详细讲解数据结构的应用_java">Java 超详细讲解数据结构的应用_java</a></li>
+                        <li class="py-2"><a href="/news/article-27411.htm" title="宠颐生动物中心医院怎么样（宠颐生动物医院方庄店）">宠颐生动物中心医院怎么样（宠颐生动物医院方庄店）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-free-ssr-node.htm" title="2月4日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.7M/S，安卓Clash机场推荐">2月4日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.7M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-v2ray.htm" title="12月25日 | 最新V2ray/Clash/SSR/Shadowrocket高速免费节点，最高速度21.2M/S，安卓Clash机场推荐">12月25日 | 最新V2ray/Clash/SSR/Shadowrocket高速免费节点，最高速度21.2M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-22309.htm" title="自己开一个宠物店（自己开一个宠物店需要多少钱）">自己开一个宠物店（自己开一个宠物店需要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-43811.htm" title="宠物疫苗可以带上飞机吗国内（宠物疫苗可以带上飞机吗国内可以带吗）">宠物疫苗可以带上飞机吗国内（宠物疫苗可以带上飞机吗国内可以带吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-node-subscribe-links.htm" title="11月8日 | 最新Clash/Shadowrocket/V2ray/SSR高速免费节点，最高速度18.9M/S，便宜机场推荐">11月8日 | 最新Clash/Shadowrocket/V2ray/SSR高速免费节点，最高速度18.9M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-45298.htm" title="vue原生方法自定义右键菜单_vue.js_">vue原生方法自定义右键菜单_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-26024.htm" title="新手开什么店赚钱（新手开店开什么店最好）">新手开什么店赚钱（新手开店开什么店最好）</a></li>
+                        <li class="py-2"><a href="/news/article-20020.htm" title="深圳市宠物领养之家官网地址电话（深圳宠物领养中心）">深圳市宠物领养之家官网地址电话（深圳宠物领养中心）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
