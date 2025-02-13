@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-55643.htm" />
+    <title>Pytorch 加载多gpu模型+解决加载模型测试结果不正确</title>
+        <meta name="description" content="将模型加载到多gpu上的时候，会用到 model = torch.nn.DataParallel(model, device_ids=[1, 2, 3]) 因此在保存模型的时候，若直接 torch.s" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="AndroidClash官方订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://androidclash.github.io/news/article-55643.htm" />
+    <meta property="og:site_name" content="AndroidClash官方订阅站" />
+    <meta property="og:title" content="Pytorch 加载多gpu模型+解决加载模型测试结果不正确" />
+    <meta property="og:image" content="https://androidclash.github.io/uploads/20240305/ab6e94a8acdc47fbee6a63003e586188.webp" />
+        <meta property="og:release_date" content="2025-02-13T03:08:23" />
+    <meta property="og:updated_time" content="2025-02-13T03:08:23" />
+        <meta property="og:description" content="将模型加载到多gpu上的时候，会用到 model = torch.nn.DataParallel(model, device_ids=[1, 2, 3]) 因此在保存模型的时候，若直接 torch.s" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Pytorch 加载多gpu模型+解决加载模型测试结果不正确">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>Pytorch 加载多gpu模型+解决加载模型测试结果不正确</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>将模型加载到多gpu上的时候，会用到</p> <pre><code class="language-python">model = torch.nn.DataParallel(model, device_ids=[1, 2, 3])</code></pre> <p>因此在保存模型的时候，若直接</p> <pre><code class="language-python">torch.save(model.state_dict(), save_dict_path)</code></pre> <p>加载后的模型参数每个都会带有 module</p> <p>如果使用strict=False的加载方式，很有可能会使测试结果不同</p> <pre><code>model.load_state_dict(weights_dict, strict=False)</code></pre> <p>解决方法1：</p> <p>在保存模型的时候使用model.module保存</p> <pre><code class="language-python">torch.save(model.module.state_dict(), save_dict)</code></pre> <p>加载的时候可直接加载：</p> <pre><code class="language-python">checkpoint = torch.load('./weight/BigDtat_BLoss6_0.83.pth', map_location='cpu') model.load_state_dict(checkpoint) model.cuda()</code></pre> <p>解决方法2：</p> <p>如果模型已经保存，将模型参数字典中的module替换为空字串进行加载：</p> <pre><code class="language-python">checkpoint = torch.load(weight_pth, map_location='cpu') model.load_state_dict({k.replace('module.', ''): v for k, v in checkpoint.items()}) model.load_state_dict(checkpoint) model = model.cuda()</code></pre> <p>不要使用model.load_state_dict(weights_dict, strict=False)这种方式，会造成预测预测结果发生变换。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-55095.htm">基于SqlSugar的数据库访问处理的封装，支持.net FrameWork和.net core的项目调用 &#8211; 伍华聪 _在线工具</a></p>
+                                        <p>下一个：<a href="/news/article-55644.htm">穷人养殖业什么最稳新手养鹅（穷人养殖什么致富）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-24483.htm" title="流浪猫养多久才会亲人抱（流浪猫养多久才会亲人抱走）">流浪猫养多久才会亲人抱（流浪猫养多久才会亲人抱走）</a></li>
+                        <li class="py-2"><a href="/news/article-33547.htm" title="被猫咬出血了该怎么办（被猫咬出血了有什么症状）">被猫咬出血了该怎么办（被猫咬出血了有什么症状）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-clash.htm" title="1月7日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度22.3M/S，安卓Clash机场推荐">1月7日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度22.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-23687.htm" title="狗粮食品加工厂有哪些项目（狗粮加工企业）">狗粮食品加工厂有哪些项目（狗粮加工企业）</a></li>
+                        <li class="py-2"><a href="/news/article-49261.htm" title="Uniapp-远离回调callback请使用await、async">Uniapp-远离回调callback请使用await、async</a></li>
+                        <li class="py-2"><a href="/news/article-45793.htm" title="开动物医院的条件有哪些要求（开动物医院需要多少资金）">开动物医院的条件有哪些要求（开动物医院需要多少资金）</a></li>
+                        <li class="py-2"><a href="/news/article-26947.htm" title="动物疫苗作用原理（动物疫苗的作用意义）">动物疫苗作用原理（动物疫苗的作用意义）</a></li>
+                        <li class="py-2"><a href="/news/article-43311.htm" title="猫咪喜欢你的十种表现（猫咪喜欢你的十种表现图片）">猫咪喜欢你的十种表现（猫咪喜欢你的十种表现图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-clash-node-daily-updates.htm" title="12月2日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度22.6M/S，便宜机场推荐">12月2日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度22.6M/S，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-clash-node-daily-updates.htm" title="12月8日 | 最新Shadowrocket/Clash/SSR/V2ray高速免费节点，最高速度20.7M/S，便宜机场推荐">12月8日 | 最新Shadowrocket/Clash/SSR/V2ray高速免费节点，最高速度20.7M/S，便宜机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
