@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-63161.htm" />
+    <title>MySQL的安装和配置(超详细图文教程)</title>
+        <meta name="description" content="1.打开下载的mysql安装文件双击解压缩，运行“mysql-5.5.40-win32.msi”。 2.选择安装类型，有“Typical（默认）”、“Complete（完全）”、“Custom（用户自" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="AndroidClash官方订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://androidclash.github.io/news/article-63161.htm" />
+    <meta property="og:site_name" content="AndroidClash官方订阅站" />
+    <meta property="og:title" content="MySQL的安装和配置(超详细图文教程)" />
+    <meta property="og:image" content="https://androidclash.github.io/uploads/20240305/0a97bd4c2545df0d8fc2b2a4eeba6279.webp" />
+        <meta property="og:release_date" content="2025-02-26T08:33:08" />
+    <meta property="og:updated_time" content="2025-02-26T08:33:08" />
+        <meta property="og:description" content="1.打开下载的mysql安装文件双击解压缩，运行“mysql-5.5.40-win32.msi”。 2.选择安装类型，有“Typical（默认）”、“Complete（完全）”、“Custom（用户自" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MySQL的安装和配置(超详细图文教程)">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>MySQL的安装和配置(超详细图文教程)</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>1.打开下载的mysql安装文件双击解压缩，运行“mysql-5.5.40-win32.msi”。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/4c44bac8d029516986da8dddfb36d0f0.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/355fba423a848f6660c8d69c311fd43c.jpg" alt="MySQL的安装和配置(超详细图文教程)"></p> <p>2.选择安装类型，有“Typical（默认）”、“Complete（完全）”、“Custom（用户自定义）”三个选项，选择“Custom”，按“next”键继续。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/5212044db093d2fa7a6a1e88651fafac.jpg" alt="MySQL的安装和配置(超详细图文教程)"></p> <p>3.点选“Browse”，手动指定安装目录。<img decoding="async" src="http://img.555519.xyz/uploads/20230210/9d1bb66ad616ee56604bab76088a6aac.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 4.填上安装目录，我的是“d:\Program Files (x86)\MySQL\MySQL Server 5.0”，按“OK”继续。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/2a8a394f24a8eeda048b13ac11777c07.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 5.确认一下先前的设置，如果有误，按“Back”返回重做。按“Install”开始安装。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/d369591f760d310f30efc90392b64ebb.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/59baf7c5f70c0fd7e0a5474b39ab415f.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/c73b645843b159715d87e7be11425992.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/30c287dfe41969241fb65a16b8f4e241.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/501cd4f0aff73cac33456b35000e75b2.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 6.正在安装中，请稍候，直到出现下面的界面, 则完成MYSQL的安装<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/026d2d5f44795abea3eab67b44892b18.jpg" alt="MySQL的安装和配置(超详细图文教程)"></p> </h1> <p>1.安装完成了，出现如下界面将进入mysql配置向导。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/42a0eeca24eb028c0becb2a76686d7ed.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 2.选择配置方式，“Detailed Configuration（手动精确配置）”、“Standard Configuration（标准配置）”，我们选择“Detailed Configuration”，方便熟悉配置过程。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/3ac202ec5a9e6db15bedbde67933354f.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 3.选择服务器类型，“Developer Machine（开发测试类，mysql占用很少资源）”、“Server Machine（服务器类型，mysql占用较多资源）”、“Dedicated MySQL Server Machine（专门的数据库服务器，mysql占用所有可用资源）”<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/54dcf3db4c77087d983e61824313594d.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 4.选择mysql数据库的大致用途，“Multifunctional Database（通用多功能型，好）”、“Transactional Database Only（服务器类型，专注于事务处理，一般）”、“Non-Transactional Database Only（非事务处理型，较简单，主要做一些监控、记数用，对MyISAM数据类型的支持仅限于non-transactional），按“Next”继续。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/fa839be388c1fd3dee5f2c6052fd091e.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/4d74427f6618ba9a3d1c8d3368166404.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 5.选择网站并发连接数，同时连接的数目，“Decision Support(DSS)/OLAP（20个左右）”、“Online Transaction Processing(OLTP)（500个左右）”、“Manual Setting（手动设置，自己输一个数）”<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/ff9e111198044f168357a56686c60034.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 6.是否启用TCP/IP连接，设定端口，如果不启用，就只能在自己的机器上访问mysql数据库了，在这个页面上，您还可以选择“启用标准模式”（Enable Strict Mode），这样MySQL就不会允许细小的语法错误。如果是新手，建议您取消标准模式以减少麻烦。但熟悉MySQL以后，尽量使用标准模式，因为它可以降低有害数据进入数据库的可能性。按“Next”继续<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/d4439de07e4362fb55162c3cd7d27441.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 7.就是对mysql默认数据库语言编码进行设置（重要），一般选UTF-8，按 “Next”继续<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/f77c7702853a3f05f0b89acef5b18a08.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 8.选择是否将mysql安装为windows服务，还可以指定Service Name（服务标识名称），是否将mysql的bin目录加入到Windows PATH（加入后，就可以直接使用bin下的文件，而不用指出目录名，比如连接，“mysql.exe -uusername -ppassword;”就可以了，不用指出mysql.exe的完整地址，很方便），我这里全部打上了勾，Service Name不变。按“Next”继续。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/011423cfb98caf4a479b61b482bb66e2.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 9.询问是否要修改默认root用户（超级管理）的密码。“Enable root access from remote machines（是否允许root用户在其它的机器上登陆，如果要安全，就不要勾上，如果要方便，就勾上它）”。最后“Create An Anonymous Account（新建一个匿名用户，匿名用户可以连接数据库，不能操作数据，包括查询）”，一般就不用勾了，设置完毕，按“Next”继续。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/617e87ff41f8063a4bb028f7dadcd49f.jpg" alt="MySQL的安装和配置(超详细图文教程)"><br /> 10.确认设置无误，按“Execute”使设置生效，即完成MYSQL的安装和配置。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/60757eb4a76160abb926dcde853308f2.jpg" alt="MySQL的安装和配置(超详细图文教程)"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230210/4a356d44544743e6670c1ac53f660466.jpg" alt="MySQL的安装和配置(超详细图文教程)"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-62559.htm">被猫爪子勾了一下出了一点血要打疫苗吗（有人死于被猫抓伤吗）</a></p>
+                                        <p>下一个：<a href="/news/article-63162.htm">58同城宠物狗狗出售柴犬可靠吗（五八同城发布狗狗出售）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-22310.htm" title="宠物粮食加工厂设备哪的好点呢视频 宠物粮食加工厂设备哪的好点呢视频讲解">宠物粮食加工厂设备哪的好点呢视频 宠物粮食加工厂设备哪的好点呢视频讲解</a></li>
+                        <li class="py-2"><a href="/news/article-47754.htm" title="pyspark从hive导出数据到clickhouse">pyspark从hive导出数据到clickhouse</a></li>
+                        <li class="py-2"><a href="/news/article-20018.htm" title="猫三联三针间隔多久打一次疫苗啊（猫三联三针间隔多久打一次疫苗啊多少钱）">猫三联三针间隔多久打一次疫苗啊（猫三联三针间隔多久打一次疫苗啊多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-16-free-shadowrocket-node.htm" title="2月16日 | 最新V2ray/Clash/SSR/Shadowrocket高速免费节点，最高速度20.3M/S，安卓Clash机场推荐">2月16日 | 最新V2ray/Clash/SSR/Shadowrocket高速免费节点，最高速度20.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-36901.htm" title="Java中File类方法详解以及实践_java">Java中File类方法详解以及实践_java</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-node-share.htm" title="1月30日 | 最新Clash/Shadowrocket/V2ray/SSR高速免费节点，最高速度21.7M/S，安卓Clash机场推荐">1月30日 | 最新Clash/Shadowrocket/V2ray/SSR高速免费节点，最高速度21.7M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-clash-node.htm" title="12月18日 | 最新Clash/V2ray/Shadowrocket/SSR高速免费节点，最高速度22.4M/S，安卓Clash机场推荐">12月18日 | 最新Clash/V2ray/Shadowrocket/SSR高速免费节点，最高速度22.4M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-clash-node.htm" title="1月25日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度19.3M/S，安卓Clash机场推荐">1月25日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度19.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-clash-node.htm" title="2月11日 | 最新Clash/V2ray/Shadowrocket/SSR高速免费节点，最高速度21.3M/S，安卓Clash机场推荐">2月11日 | 最新Clash/V2ray/Shadowrocket/SSR高速免费节点，最高速度21.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-20476.htm" title="开宠物医院需要资质吗（想开个宠物医院需要考什么证）">开宠物医院需要资质吗（想开个宠物医院需要考什么证）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
