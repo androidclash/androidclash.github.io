@@ -1,4 +1,4 @@
-# 3月2日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度19.2M/S，安卓Clash机场推荐  更新时间 2025-03-02 09:45:42
+# 3月5日 | 最新SSR/Clash/V2ray/Shadowrocket高速免费节点，最高速度20.7M/S，安卓Clash机场推荐  更新时间 2025-03-05 11:21:29
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://androidclash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://androidclash.github.io/uploads/2025/03/0-20250302.yaml
-- https://androidclash.github.io/uploads/2025/03/1-20250302.yaml
-- https://androidclash.github.io/uploads/2025/03/2-20250302.yaml
-- https://androidclash.github.io/uploads/2025/03/3-20250302.yaml
-- https://androidclash.github.io/uploads/2025/03/4-20250302.yaml
+- https://androidclash.github.io/uploads/2025/03/0-20250305.yaml
+- https://androidclash.github.io/uploads/2025/03/1-20250305.yaml
+- https://androidclash.github.io/uploads/2025/03/2-20250305.yaml
+- https://androidclash.github.io/uploads/2025/03/3-20250305.yaml
+- https://androidclash.github.io/uploads/2025/03/4-20250305.yaml
 
 ### V2ray订阅链接
 
-- https://androidclash.github.io/uploads/2025/03/0-20250302.txt
-- https://androidclash.github.io/uploads/2025/03/1-20250302.txt
-- https://androidclash.github.io/uploads/2025/03/2-20250302.txt
-- https://androidclash.github.io/uploads/2025/03/3-20250302.txt
-- https://androidclash.github.io/uploads/2025/03/4-20250302.txt
+- https://androidclash.github.io/uploads/2025/03/0-20250305.txt
+- https://androidclash.github.io/uploads/2025/03/1-20250305.txt
+- https://androidclash.github.io/uploads/2025/03/2-20250305.txt
+- https://androidclash.github.io/uploads/2025/03/3-20250305.txt
+- https://androidclash.github.io/uploads/2025/03/4-20250305.txt
 
 ### Sing-box订阅链接
 
-- https://androidclash.github.io/uploads/2025/03/20250302.json
+- https://androidclash.github.io/uploads/2025/03/20250305.json
 
 ## 更多clash节点订阅 ：
 
