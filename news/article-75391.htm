@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-75391.htm" />
+    <title>动态添加select后不显示layui动态添加select后重新渲染</title>
+        <meta name="description" content="一、问题：利用jQuery动态添加的代码中包含select，运行后不显示 1、显示的状态 2、后台的代码 正常情况下应该像队长班级一样显示，但是却惊奇的发现，事与愿违 二、原因 Layui会对sele" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="AndroidClash官方订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://androidclash.github.io/news/article-75391.htm" />
+    <meta property="og:site_name" content="AndroidClash官方订阅站" />
+    <meta property="og:title" content="动态添加select后不显示layui动态添加select后重新渲染" />
+    <meta property="og:image" content="https://androidclash.github.io/uploads/20240305/07556d0e22490b18cfb0d231cbd394c6.webp" />
+        <meta property="og:release_date" content="2025-03-17T09:38:54" />
+    <meta property="og:updated_time" content="2025-03-17T09:38:54" />
+        <meta property="og:description" content="一、问题：利用jQuery动态添加的代码中包含select，运行后不显示 1、显示的状态 2、后台的代码 正常情况下应该像队长班级一样显示，但是却惊奇的发现，事与愿违 二、原因 Layui会对sele" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="动态添加select后不显示layui动态添加select后重新渲染">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>动态添加select后不显示layui动态添加select后重新渲染</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>一、问题：利用jQuery动态添加的代码中包含select，运行后不显示<br /> 1、显示的状态<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/a39c185db4a80f8cff6b3bd1aa2ee376.jpg" alt="动态添加select后不显示layui动态添加select后重新渲染"><br /> 2、后台的代码<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/363ecbb6b907eed04b26804d69f29dc2.jpg" alt="动态添加select后不显示layui动态添加select后重新渲染"><br /> 正常情况下应该像队长班级一样显示，但是却惊奇的发现，事与愿违</p> <p>二、原因<br /> Layui会对select、checkbox、radio等原始元素隐藏，从而进行美化修饰处理。但这需要依赖于form组件，所以你必须加载 form，并且执行一个实例。值得注意的是：导航的Hover效果、Tab选项卡等同理（它们需依赖 element 模块）</p> <p>所以当新添加这些元素以后需要对页面表单元素重新渲染一下</p> <pre><code class="prism language-js">layui<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'form'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> form<span class="token operator">=</span> layui<span class="token punctuation">.</span><span class="token function">form</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//高版本建议把括号去掉，有的低版本，需要加()</span>  form<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <p>三、抢救措施<br /> 在每一次添加之后，都对form表单重新渲染，直接上代码</p> <pre><code class="prism language-js"><span class="token keyword">function</span><span class="token function">renderForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">//在这里把重新渲染的功能包装秤一个方法</span>         layui<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'form'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> form<span class="token operator">=</span> layui<span class="token punctuation">.</span><span class="token function">form</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//高版本建议把括号去掉，有的低版本，需要加()</span>             form<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#addBtn"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> array<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#leaderCls option"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> txt<span class="token operator">=</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">if</span><span class="token punctuation">(</span>txt<span class="token operator">!=</span><span class="token string">"请选择班级"</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 array<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>txt<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             str<span class="token operator">+=</span><span class="token string">"&lt;option value='"</span><span class="token operator">+</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"'&gt;"</span><span class="token operator">+</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token string">"&lt;/option&gt;"</span><span class="token punctuation">}</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#infoList"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"&lt;div&gt;&lt;a href=\"#\" name=\"rmlink\"&gt;X&lt;/a&gt;\n"</span><span class="token operator">+</span><span class="token string">"&lt;div class=\"layui-form-item\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"\t&lt;label class=\"layui-form-label\"&gt;队员学号：&lt;/label&gt;\n"</span><span class="token operator">+</span><span class="token string">"\t&lt;div class=\"layui-input-block\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"\t\t&lt;input type=\"text\" name=\"stuId\" required lay-verify=\"required\" placeholder=\"请输入队员学号\" autocomplete=\"off\" class=\"layui-input\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"\t&lt;/div&gt;\n"</span><span class="token operator">+</span><span class="token string">"&lt;/div&gt;"</span><span class="token operator">+</span><span class="token string">"&lt;div class=\"layui-form-item\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"    &lt;label class=\"layui-form-label\"&gt;队员姓名：&lt;/label&gt;\n"</span><span class="token operator">+</span><span class="token string">"    &lt;div class=\"layui-input-block\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"        &lt;input type=\"text\" name=\"stuName\" required lay-verify=\"required\" placeholder=\"请输入队员姓名\" autocomplete=\"off\" class=\"layui-input\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"    &lt;/div&gt;\n"</span><span class="token operator">+</span><span class="token string">"&lt;/div&gt;\n"</span><span class="token operator">+</span><span class="token string">"&lt;div class=\"layui-form-item\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"    &lt;label class=\"layui-form-label\"&gt;队员班级：&lt;/label&gt;\n"</span><span class="token operator">+</span><span class="token string">"    &lt;div class=\"layui-input-block\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"       &lt;select name=\"stuClass\" lay-filter=\"status\"&gt;\n"</span><span class="token operator">+</span><span class="token string">"           &lt;option value=\"\"&gt;请选择班级&lt;/option&gt;\n"</span><span class="token operator">+</span>                             str<span class="token operator">+</span><span class="token string">"       &lt;/select&gt;\n"</span><span class="token operator">+</span><span class="token string">"    &lt;/div&gt;\n"</span><span class="token operator">+</span><span class="token string">"&lt;/div&gt;&lt;/div&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">renderForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//每一次动态添加代码后重新渲染一下form</span><span class="token comment">// 为新元素节点添加事件侦听器</span><span class="token function">bindListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre> <p>四、效果<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/9bed7bdb1b6443b139dca8c0830e5f59.jpg" alt="动态添加select后不显示layui动态添加select后重新渲染"><br /> 好起来了。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75390.htm">IDEA部署Tomcat(超详细)</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-46787.htm" title="国产狗粮十大排名榜（国产狗粮十大排行榜）">国产狗粮十大排名榜（国产狗粮十大排行榜）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-21-free-v2ray.htm" title="2月21日 | 最新V2ray/Clash/Shadowrocket/SSR高速免费节点，最高速度19.3M/S，安卓Clash机场推荐">2月21日 | 最新V2ray/Clash/Shadowrocket/SSR高速免费节点，最高速度19.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-free-ssr-node.htm" title="2月4日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.7M/S，安卓Clash机场推荐">2月4日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.7M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-clash.htm" title="3月9日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度22.5M/S，安卓Clash机场推荐">3月9日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度22.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-free-ssr-node.htm" title="1月28日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.2M/S，安卓Clash机场推荐">1月28日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.2M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-40830.htm" title="宠物上门回收猫多少钱（上门回收宠物猫电话）">宠物上门回收猫多少钱（上门回收宠物猫电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-free-clash-subscribe.htm" title="2月7日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度18.9M/S，安卓Clash机场推荐">2月7日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度18.9M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-free-clash.htm" title="1月24日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度19.8M/S，安卓Clash机场推荐">1月24日 | 最新SSR/Shadowrocket/Clash/V2ray高速免费节点，最高速度19.8M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-43810.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-free-clash-subscribe.htm" title="2月8日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点，最高速度21M/S，安卓Clash机场推荐">2月8日 | 最新Clash/V2ray/SSR/Shadowrocket高速免费节点，最高速度21M/S，安卓Clash机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
