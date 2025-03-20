@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-76065.htm" />
+    <title>设计模式学习笔记装饰器模式及其应用详解</title>
+        <meta name="description" content="装饰器（Decorator）模式：指不改变现有对象结构的情况下，动态地给该对象增加额外功能。 一、装饰器模式介绍 装饰器模式允许向一个现有的对象添加新的功能，同时不改变其结果。比如Java 中的IO框" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="AndroidClash官方订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://androidclash.github.io/news/article-76065.htm" />
+    <meta property="og:site_name" content="AndroidClash官方订阅站" />
+    <meta property="og:title" content="设计模式学习笔记装饰器模式及其应用详解" />
+    <meta property="og:image" content="https://androidclash.github.io/uploads/20240305/990e932fe58a27a8a0eb695749fd4e82.webp" />
+        <meta property="og:release_date" content="2025-03-18T06:11:29" />
+    <meta property="og:updated_time" content="2025-03-18T06:11:29" />
+        <meta property="og:description" content="装饰器（Decorator）模式：指不改变现有对象结构的情况下，动态地给该对象增加额外功能。 一、装饰器模式介绍 装饰器模式允许向一个现有的对象添加新的功能，同时不改变其结果。比如Java 中的IO框" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="设计模式学习笔记装饰器模式及其应用详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>设计模式学习笔记装饰器模式及其应用详解</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>装饰器（Decorator）模式：指不改变现有对象结构的情况下，动态地给该对象增加额外功能。</p> <h2 id="一装饰器模式介绍">一、装饰器模式介绍</h2> <p>装饰器模式允许向一个现有的对象添加新的功能，同时不改变其结果。比如Java 中的IO框架中，<code>FileInputStream</code>（处理文件）、<code>ByteArrayInputStream</code>（处理字节数组）、<code>BufferedInputStream</code>（带缓存的处理类）等就是对<code>InputStream</code>进行的功能扩展，这就是装饰器模式的典型应用。比如下面就是以缓存方式读取输入流：</p> <pre><code class="language-java">InputStream inputStream = new BufferedInputStream(new FileInputStream("test.txt")); byte[] data = new byte[128]; while(inputStream.read(data) != -1){     //... }</code></pre> <h3 id="11-装饰器模式结构">1.1 装饰器模式结构</h3> <p>装饰器主要使用组合关系来创建一个装饰对象，用于包裹真实对象，并在保持真实对象的类结构不变的前提下为其提供额外的功能。具体的基本结构如下所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/16f634c1d272c2f78720f8b02dc865d4.jpg" alt="设计模式学习笔记装饰器模式及其应用详解"></p> <ul> <li><code>Component</code>：抽象构件，定义一个抽象接口以规范准备接收附加责任的对象</li> <li><code>ComponentA</code>：具体构件，实现抽象构件，通过装饰角色为其添加一些职责</li> <li><code>Decorator</code>：抽象装饰构件，并包含具体构件的实例</li> <li><code>DecoratorA、DecoratorB</code>：实现抽象装饰构件的具体装饰构件，包含实现抽象装饰的相关方法</li> <li><code>Client</code>：客户端</li> </ul> <h3 id="12-装饰器模式实现">1.2 装饰器模式实现</h3> <p>根据上面的类图可以实现如下代码：</p> <pre><code class="language-java">/**  * @description: 抽象构件角色  * @author: wjw  * @date: 2022/3/31  */ public interface Component {      public void operation(); }  /**  * @description:具体构件角色  * @author: wjw  * @date: 2022/3/31  */ public class ComponentA implements Component{      public ComponentA() {         System.out.println("创建具体构件componentA");     }      @Override     public void operation() {         System.out.println("我是具体构件A的operation方法");     } }  /**  * @description: 抽象装饰  * @author: wjw  * @date: 2022/3/31  */ public class Decorator implements Component{      private Component component;      public Decorator(Component component) {         this.component = component;     }      @Override     public void operation() {         component.operation();     } }  /**  * @description: 具体装饰角色A  * @author: wjw  * @date: 2022/3/31  */ public class DecoratorA extends Decorator{      public DecoratorA(Component component) {         super(component);     }      @Override     public void operation() {         super.operation();         addedFunction();     }      /**      * 增加的额外功能      */     public void addedFunction() {         System.out.println("我是为具体装饰角色A增加额外功能方法addedFunction");     } }  /**  * @description: 具体装饰角色B  * @author: wjw  * @date: 2022/3/31  */ public class DecoratorB extends Decorator{      public DecoratorB(Component component) {         super(component);     }      @Override     public void operation() {         super.operation();         addedFunction();     }      private void addedFunction() {         System.out.println("为具体装饰角色增加额外的功能B");     } }  /**  * @description: 客户端  * @author: wjw  * @date: 2022/3/31  */ public class DecoratiorClient {      public static void main(String[] args) {         Component componentA = new ComponentA();         componentA.operation();         Decorator decoratorA = new DecoratorA(componentA);         decoratorA.operation();     } }</code></pre> <h2 id="二装饰器模式应用场景">二、装饰器模式应用场景</h2> <h3 id="21-java-io-类中的应用">2.1 Java IO 类中的应用</h3> <p>在开始介绍中提到，IO中有很多装饰器的应用：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/040f51929fdfdad40acbd738e44de053.jpg" alt="设计模式学习笔记装饰器模式及其应用详解"></p> <p>如上图所示，比如<code>InputStream</code>后面的若干装饰器类都是对其的功能扩展。</p> <h3 id="22-mybatis-中-cache的应用">2.2 MyBatis 中 Cache的应用</h3> <p>Cache 中除了有数据存储和缓存的基本功能外还有其他附加的 Cache 类，比如有 FifoCache（先进先出）、LruCache（最近最少使用LRU）、SychronizedCache（防止多线程并发访问）的众多附加功能的缓存类。都是装饰器的应用：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/cc20d96d7aea856e638014c7e88036dd.jpg" alt="设计模式学习笔记装饰器模式及其应用详解"></p> <h2 id="参考资料">参考资料</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://mp.weixin.qq.com/s/hDJs6iG_YPww7yeiPxmZLw"  target="_blank" rel="nofollow">https://mp.weixin.qq.com/s/hDJs6iG_YPww7yeiPxmZLw</a>?</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://c.biancheng.net/view/1366.html"  target="_blank" rel="nofollow">http://c.biancheng.net/view/1366.html</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75391.htm">动态添加select后不显示layui动态添加select后重新渲染</a></p>
+                                        <p>下一个：<a href="/news/article-76066.htm">FreeRTOS进阶之队列示例完全解析_操作系统</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-70070.htm" title="厦门宠物领养贴吧 厦门宠物领养贴吧论坛">厦门宠物领养贴吧 厦门宠物领养贴吧论坛</a></li>
+                        <li class="py-2"><a href="/news/article-65001.htm" title="标题动物临床常用的注射技术有哪些种类（动物常用的注射方法有）">标题动物临床常用的注射技术有哪些种类（动物常用的注射方法有）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-clash-node.htm" title="2月6日 | 最新Clash/SSR/V2ray/Shadowrocket高速免费节点，最高速度21.1M/S，安卓Clash机场推荐">2月6日 | 最新Clash/SSR/V2ray/Shadowrocket高速免费节点，最高速度21.1M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-free-high-speed-nodes.htm" title="2月1日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度22.3M/S，安卓Clash机场推荐">2月1日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度22.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-39354.htm" title="兽用疫苗回温器使用说明（兽用疫苗回温器使用说明图片）">兽用疫苗回温器使用说明（兽用疫苗回温器使用说明图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-clash.htm" title="3月9日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度22.5M/S，安卓Clash机场推荐">3月9日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度22.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-free-shadowrocket-node.htm" title="1月16日 | 最新SSR/Clash/Shadowrocket/V2ray高速免费节点，最高速度19.7M/S，安卓Clash机场推荐">1月16日 | 最新SSR/Clash/Shadowrocket/V2ray高速免费节点，最高速度19.7M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-free-clash-subscribe.htm" title="3月6日 | 最新Shadowrocket/V2ray/SSR/Clash高速免费节点，最高速度18.1M/S，安卓Clash机场推荐">3月6日 | 最新Shadowrocket/V2ray/SSR/Clash高速免费节点，最高速度18.1M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-56762.htm" title="动物打预防针的作用和功效是什么（动物注射疫苗）">动物打预防针的作用和功效是什么（动物注射疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-clash-node.htm" title="1月22日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度18.8M/S，安卓Clash机场推荐">1月22日 | 最新SSR/Shadowrocket/V2ray/Clash高速免费节点，最高速度18.8M/S，安卓Clash机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
