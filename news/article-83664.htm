@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://androidclash.github.io/news/article-83664.htm" />
+    <title>进程内优雅管理多个服务</title>
+        <meta name="description" content="前言 在 go-zero 社区里，经常会有同学问，把API gateway 和RPC service 放在同一个进程内可不可以？怎么弄？有时也会有同学把对外服务和消费队列放在一个进程内。咱们姑且不说此" />
+        <meta charset="utf-8">
+    <link rel="icon" href="/assets/website/img/androidclash/favicon.ico" type="image/x-icon"/>
+    
+    <meta name="author" content="AndroidClash官方订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://androidclash.github.io/news/article-83664.htm" />
+    <meta property="og:site_name" content="AndroidClash官方订阅站" />
+    <meta property="og:title" content="进程内优雅管理多个服务" />
+    <meta property="og:image" content="https://androidclash.github.io/uploads/20240305/472350fdcf73b060d26208777b056fa5.webp" />
+        <meta property="og:release_date" content="2025-03-29T08:59:01" />
+    <meta property="og:updated_time" content="2025-03-29T08:59:01" />
+        <meta property="og:description" content="前言 在 go-zero 社区里，经常会有同学问，把API gateway 和RPC service 放在同一个进程内可不可以？怎么弄？有时也会有同学把对外服务和消费队列放在一个进程内。咱们姑且不说此" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="进程内优雅管理多个服务">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/animate.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/flaticon.css" rel="stylesheet" />
+    <link href="/assets/website/css/androidclash/style.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y3WCCGRJ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Y3WCCGRJ2');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+                        <a class="navbar-brand" href="/">Android Clash<span></span></a>
+            
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> MENU
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                	                    <li class="nav-item"><a href="/" class="nav-link"><span>首页</span></a></li>
+                                        <li class="nav-item"><a href="/free-nodes/" class="nav-link"><span>免费节点</span></a></li>
+                                        <li class="nav-item"><a href="/paid-subscribe/" class="nav-link"><span>推荐机场</span></a></li>
+                                        <li class="nav-item"><a href="/client.htm" class="nav-link"><span>客户端</span></a></li>
+                                        <li class="nav-item"><a href="/news/" class="nav-link"><span>新闻资讯</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="hero-wrap" style="height:350px;overflow: hidden;">
+        <div class="overlay"></div>
+        <div class="container-fluid px-0">
+            <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+                <img class="one-third js-fullheight align-self-end order-md-last img-fluid" href="/assets/website/img/androidclash/undraw_book_lover_mkck.svg" alt="" style="opacity: 0.5;">
+                <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+                    <div class="text" style="top: 30%;min-width: 70%;">
+                        <h1>进程内优雅管理多个服务</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-about img ftco-section" id="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                	                <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="前言">前言</h2> <p>在 go-zero 社区里，经常会有同学问，把<code>API gateway</code> 和<code>RPC service</code> 放在同一个进程内可不可以？怎么弄？有时也会有同学把对外服务和消费队列放在一个进程内。咱们姑且不说此种用法合理与否，因为各个公司的业务场景和开发模式的差异，我们就只来看看此类问题怎么解比较优雅。</p> <h2 id="问题举例">问题举例</h2> <p>我们用两个<code>HTTP</code> 服务来举例，我们有这样两个服务，需要启动在一个进程内的两个不同端口。代码如下：</p> <pre><code class="language-go">package main  import (   "fmt"   "net/http" )  func morning(w http.ResponseWriter, req *http.Request) {   fmt.Fprintln(w, "morning!") }  func evening(w http.ResponseWriter, req *http.Request) {   fmt.Fprintln(w, "evening!") }  type Morning struct{}  func (m Morning) Start() {   http.HandleFunc("/morning", morning)   http.ListenAndServe("localhost:8080", nil) }  func (m Morning) Stop() {   fmt.Println("Stop morning service...") }  type Evening struct{}  func (e Evening) Start() {   http.HandleFunc("/evening", evening)   http.ListenAndServe("localhost:8081", nil) }  func (e Evening) Stop() {   fmt.Println("Stop evening service...") }  func main() {   // todo: start both services here }</code></pre> <p>代码是足够简单的，就是有请求<code>morning</code> 接口，服务返回<code>morning!</code>，请求<code>evening</code> 接口，服务返回<code>evening</code> 。让我们来尝试实现一下～</p> <h2 id="第一次尝试">第一次尝试</h2> <p>启动两个服务，不就是把两个服务在<code>main</code> 里都启动一下吗？我们来试试</p> <pre><code class="language-go">func main() {   var morning Morning   morning.Start()   defer morning.Stop()    var evening Evening   evening.Start()   defer evening.Stop() }</code></pre> <p>启动完，我们用<code>curl</code> 来验证一下</p> <pre><code class="language-shell">$ curl -i http://localhost:8080/morning HTTP/1.1 200 OK Date: Mon, 18 Apr 2022 02:10:34 GMT Content-Length: 9 Content-Type: text/plain; charset=utf-8  morning! $ curl -i http://localhost:8081/evening curl: (7) Failed to connect to localhost port 8081 after 4 ms: Connection refused</code></pre> <p>为什么只有<code>morning</code> 成功，而<code>evening</code> 无法请求呢？</p> <p>我们在<code>main</code> 里面加上打印语句试试</p> <pre><code class="language-go">func main() {   fmt.Println("Start morning service...")   var morning Morning   morning.Start()   defer morning.Stop()    fmt.Println("Start evening service...")   var evening Evening   evening.Start()   defer evening.Stop() }</code></pre> <p>重新启动</p> <pre><code class="language-shell">$ go run main.go Start morning service...</code></pre> <p>发现只打印了<code>Start morning service…</code>，原来<code>evening</code> 服务压根没有启动。究其原因，是因为<code>morning.Start()</code> 阻塞了当前<code>goroutine</code>，后续代码就得不到执行了。</p> <h2 id="第二次尝试">第二次尝试</h2> <p>这时，<code>WaitGroup</code> 就可以派上用场了。<code>WaitGroup</code> 顾名思义，就是用来<code>wait</code> 一组操作，等待它们通知可以继续。让我们来尝试一下。</p> <pre><code class="language-go">func main() {   var wg sync.WaitGroup   wg.Add(2)    go func() {     defer wg.Done()     fmt.Println("Start morning service...")     var morning Morning     defer morning.Stop()     morning.Start()   }()    go func() {     defer wg.Done()     fmt.Println("Start evening service...")     var evening Evening     defer evening.Stop()     evening.Start()   }()    wg.Wait() }</code></pre> <p>启动试试</p> <pre><code class="language-shell">$ go run main.go Start evening service... Start morning service...</code></pre> <p>好，两个服务都起来了，我们用<code>curl</code> 验证一下</p> <pre><code class="language-shell">$ curl -i http://localhost:8080/morning HTTP/1.1 200 OK Date: Mon, 18 Apr 2022 02:28:33 GMT Content-Length: 9 Content-Type: text/plain; charset=utf-8  morning! $ curl -i http://localhost:8081/evening HTTP/1.1 200 OK Date: Mon, 18 Apr 2022 02:28:36 GMT Content-Length: 9 Content-Type: text/plain; charset=utf-8  evening!</code></pre> <p>确实都可以了，我们看到我们使用<code>WaitGroup</code> 的流程是</p> <ol> <li>记得我们有几个需要<code>wait</code> 的服务</li> <li>一个一个添加服务</li> <li>等待所有服务结束</li> </ol> <p>让我们看看<code>go-zero</code> 是怎么做的~</p> <h2 id="第三次尝试">第三次尝试</h2> <p>在<code>go-zero</code> 里，我们提供了一个<code>ServiceGroup</code> 工具，方便管理多个服务的启动和停止。让我们看看带入我们的场景是怎么做的。</p> <pre><code class="language-go">import "github.com/zeromicro/go-zero/core/service"  // more code  func main() {   group := service.NewServiceGroup()   defer group.Stop()   group.Add(Morning{})   group.Add(Evening{})   group.Start() }</code></pre> <p>可以看到，代码的可读性好了很多，并且我们也不会不小心算错该给<code>WaitGroup</code> 加几了。并且<code>ServiceGroup</code> 还保证了后启动的服务先<code>Stop</code>，跟<code>defer</code> 效果一致，这样的行为便于资源的清理。</p> <p><code>ServiceGroup</code> 不光只是管理了每个服务的<code>Start/Stop</code>，同时也提供了<code>graceful shutdown</code>，当收到<code>SIGTERM</code> 信号的时候会主动调用每个服务的<code>Stop</code>  方法，对于<code>HTTP</code> 服务，可以通过<code>server.Shutdown</code> 来优雅退出，对于<code>gRPC</code> 服务来说，可以通过<code>server.GracefulStop()</code> 来优雅退出。</p> <h2 id="总结">总结</h2> <p><code>ServiceGroup</code> 的实现其实也是比较简单的，代码一共82行。</p> <pre><code class="language-shell">$ cloc core/service/servicegroup.go ------------------------------------------------------------------ Language        files          blank        comment           code ------------------------------------------------------------------ Go                 1             22             14             82 ------------------------------------------------------------------</code></pre> <p>虽然代码短小精悍，但是在<code>go-zero</code> 里却每个服务（Restful, RPC, MQ）基本都是通过<code>ServiceGroup</code> 来管理的，可以说非常方便，代码值得一读。</p> <h2 id="项目地址">项目地址</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/zeromicro/go-zero"  target="_blank" rel="nofollow">https://github.com/zeromicro/go-zero</a></p> <p>欢迎使用<code>go-zero</code> 并<strong>star</strong> 支持我们！</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-82965.htm">2021年国考公务员报考指南电子版（国考公务员2021年报名流程）</a></p>
+                                        <p>下一个：<a href="/news/article-83665.htm">自制猫粮的做法（便宜又营养的自制猫粮做法教程）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                	<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-clash.htm" title="3月9日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度22.5M/S，安卓Clash机场推荐">3月9日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度22.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-node-share.htm" title="2月22日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度22.8M/S，安卓Clash机场推荐">2月22日 | 最新SSR/V2ray/Clash/Shadowrocket高速免费节点，最高速度22.8M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-50793.htm" title="开个宠物诊所大概需要多少钱（开个宠物诊所大概需要多少钱费用）">开个宠物诊所大概需要多少钱（开个宠物诊所大概需要多少钱费用）</a></li>
+                        <li class="py-2"><a href="/news/article-63161.htm" title="MySQL的安装和配置(超详细图文教程)">MySQL的安装和配置(超详细图文教程)</a></li>
+                        <li class="py-2"><a href="/news/article-69423.htm" title="青浦二中2020本科录取率高吗（青浦二中本科率2019）">青浦二中2020本科录取率高吗（青浦二中本科率2019）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-free-v2ray-subscribe.htm" title="2月20日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度22.5M/S，安卓Clash机场推荐">2月20日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度22.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-27-clash-v2ray-ss-ssr.htm" title="2月27日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度21.8M/S，安卓Clash机场推荐">2月27日 | 最新V2ray/SSR/Shadowrocket/Clash高速免费节点，最高速度21.8M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-82251.htm" title="宠物医院好评评语100字怎么写（宠物医院写好评题材）">宠物医院好评评语100字怎么写（宠物医院写好评题材）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-shadowrocket-node.htm" title="3月10日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.2M/S，安卓Clash机场推荐">3月10日 | 最新Shadowrocket/SSR/V2ray/Clash高速免费节点，最高速度21.2M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-77411.htm" title="上海宠物救助中心电话24小时嘉定（上海嘉定宠物救助站）">上海宠物救助中心电话24小时嘉定（上海嘉定宠物救助站）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">AndroidClash官方订阅站</a> 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+    <script src="/assets/website/js/frontend/androidclash/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.easing.1.3.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/jquery.animateNumber.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/scrollax.min.js"></script>
+    <script src="/assets/website/js/frontend/androidclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
