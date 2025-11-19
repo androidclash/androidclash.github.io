@@ -263,39 +263,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 的差别？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
     <div class="panel-body">
-        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理只影响支持代理的应用。TUN 适合全局加速，如游戏、视频和浏览器流量，提高网络稳定性和覆盖范围。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
-    <div class="panel-body">
-        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 的 UDP 转发如何配置？</h5></div>
-    <div class="panel-body">
-        Netch 可在客户端设置 UDP 转发开关，选择需要代理的 UDP 流量端口或应用。适用于游戏、语音或实时视频，确保这些应用在代理环境下低延迟且稳定。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 使用哪种加密算法？</h5></div>
-    <div class="panel-body">
-        Hysteria2 默认使用 AEAD 加密算法（如 ChaCha20-Poly1305），并可结合 TLS 层加密保障安全性。其设计兼顾速度与抗干扰能力，适合高延迟跨境网络环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的系统代理模式有哪些？</h5></div>
-    <div class="panel-body">
-        WinXray 支持三种系统代理模式：全局、直连和 PAC 模式。全局模式代理所有流量；直连模式跳过代理；PAC 模式根据规则文件智能判断是否走代理。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式能减少握手延迟吗？</h5></div>
-    <div class="panel-body">
-        XTLS 通过减少握手次数和加密开销，降低延迟，特别适合短连接或高并发场景。结合策略组，可保证连接稳定性和访问速度，适用于移动网络和游戏环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 在 iOS 上无法连接时如何调试？</h5></div>
-    <div class="panel-body">
-        检查 iOS 的 VPN 配置权限是否授予，确认订阅链接或手动配置填写无误；查看 Surfboard 的日志或诊断页面，查看是否为 DNS 问题、TLS 错误或节点超时，并尝试切换节点或重启应用。<hr />    </div>
+        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 与 Shadowrocket 相比的最大区别是什么？</h5></div>
@@ -303,9 +273,39 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         QuantumultX 在规则系统和自动化脚本上更灵活，支持丰富的 rewrite 与 filter 功能，而 Shadowrocket 则更轻便易用，适合普通用户快速切换节点。二者可根据使用习惯与功能需求选择。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
+    <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 的差别？</h5></div>
     <div class="panel-body">
-        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
+        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理只影响支持代理的应用。TUN 适合全局加速，如游戏、视频和浏览器流量，提高网络稳定性和覆盖范围。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 使用哪种加密算法？</h5></div>
+    <div class="panel-body">
+        Hysteria2 默认使用 AEAD 加密算法（如 ChaCha20-Poly1305），并可结合 TLS 层加密保障安全性。其设计兼顾速度与抗干扰能力，适合高延迟跨境网络环境。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 的 UDP 转发如何配置？</h5></div>
+    <div class="panel-body">
+        Netch 可在客户端设置 UDP 转发开关，选择需要代理的 UDP 流量端口或应用。适用于游戏、语音或实时视频，确保这些应用在代理环境下低延迟且稳定。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
+    <div class="panel-body">
+        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的系统代理模式有哪些？</h5></div>
+    <div class="panel-body">
+        WinXray 支持三种系统代理模式：全局、直连和 PAC 模式。全局模式代理所有流量；直连模式跳过代理；PAC 模式根据规则文件智能判断是否走代理。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 在 iOS 上无法连接时如何调试？</h5></div>
+    <div class="panel-body">
+        检查 iOS 的 VPN 配置权限是否授予，确认订阅链接或手动配置填写无误；查看 Surfboard 的日志或诊断页面，查看是否为 DNS 问题、TLS 错误或节点超时，并尝试切换节点或重启应用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 模式能减少握手延迟吗？</h5></div>
+    <div class="panel-body">
+        XTLS 通过减少握手次数和加密开销，降低延迟，特别适合短连接或高并发场景。结合策略组，可保证连接稳定性和访问速度，适用于移动网络和游戏环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 全局与规则代理如何选择？</h5></div>
@@ -339,16 +339,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-21-clash-windows.htm" title="10月21日 | 最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度20.8M/S，安卓Clash机场推荐">10月21日 | 最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度20.8M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-20-free-shadowrocket-node.htm" title="10月20日 | 最新Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点高速免费节点，最高速度21.6M/S，安卓Clash机场推荐">10月20日 | 最新Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点高速免费节点，最高速度21.6M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-22-free-ssr-subscribe.htm" title="10月22日 | 最新Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐">10月22日 | 最新Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-23-shadowrocket-node.htm" title="10月23日 | 最新Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点高速免费节点，最高速度20.7M/S，安卓Clash机场推荐">10月23日 | 最新Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点高速免费节点，最高速度20.7M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-v2ray.htm" title="11月5日 | 最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点高速免费节点，最高速度20.5M/S，安卓Clash机场推荐">11月5日 | 最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点高速免费节点，最高速度20.5M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-24-shadowrocket-node.htm" title="10月24日 | 最新Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐">10月24日 | 最新Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-clash-windows.htm" title="10月11日 | 最新SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点高速免费节点，最高速度22.3M/S，安卓Clash机场推荐">10月11日 | 最新SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点高速免费节点，最高速度22.3M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-3-clash-windows.htm" title="10月3日 | 最新SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度18.6M/S，安卓Clash机场推荐">10月3日 | 最新SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度18.6M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-2-free-subscribe-node.htm" title="11月2日 | 最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐">11月2日 | 最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-25-free-ssr-subscribe.htm" title="10月25日 | 最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点高速免费节点，最高速度19M/S，安卓Clash机场推荐">10月25日 | 最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点高速免费节点，最高速度19M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-11-clash-windows.htm" title="10月11日 | 最新SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点高速免费节点，最高速度22.3M/S，安卓Clash机场推荐">10月11日 | 最新SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点高速免费节点，最高速度22.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-v2ray.htm" title="11月5日 | 最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点高速免费节点，最高速度20.5M/S，安卓Clash机场推荐">11月5日 | 最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点高速免费节点，最高速度20.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-18-shadowrocket-node.htm" title="10月18日 | 最新V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点高速免费节点，最高速度18.6M/S，安卓Clash机场推荐">10月18日 | 最新V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点高速免费节点，最高速度18.6M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-15-free-subscribe-node.htm" title="10月15日 | 最新V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐">10月15日 | 最新V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-3-clash-windows.htm" title="10月3日 | 最新SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度18.6M/S，安卓Clash机场推荐">10月3日 | 最新SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度18.6M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-free-ssr-node.htm" title="11月10日 | 最新SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点高速免费节点，最高速度22.9M/S，安卓Clash机场推荐">11月10日 | 最新SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点高速免费节点，最高速度22.9M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-31-free-clash-subscribe.htm" title="10月31日 | 最新Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐">10月31日 | 最新Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-7-clash-node.htm" title="10月7日 | 最新Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">10月7日 | 最新Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-22-free-ssr-subscribe.htm" title="10月22日 | 最新Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐">10月22日 | 最新Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -360,7 +360,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
