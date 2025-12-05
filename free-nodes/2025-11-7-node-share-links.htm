@@ -259,19 +259,19 @@ Shadowrocket的界面设计简洁清晰，操作简单易懂。即使是没有�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 服务器如何防止被扫描到真实 IP？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 支持哪些内核？</h5></div>
     <div class="panel-body">
-        可以把 Trojan 部署在反向代理或 CDN 后端，使用 CDN 的中转与域名伪装；同时避免在服务器上暴露其他与域名不匹配的服务，关闭 FTP/SSH 直连并设置防火墙白名单。<hr />    </div>
+        PassWall2 支持多种代理内核，如 Xray、V2Ray、Sing-box、Trojan-go、Hysteria2 等。用户可在插件管理中切换所需内核，以获得不同协议与性能的支持。部分内核需手动下载并启用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 代理有什么区别？</h5></div>
+    <div class="panel-heading"><h5>SSR 的协议插件与加密方式如何搭配使用？</h5></div>
     <div class="panel-body">
-        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理通常只影响指定应用。TUN 更适合全局加速，如游戏、视频和浏览器流量，提高网络稳定性和覆盖范围。<hr />    </div>
+        协议插件可增强抗封锁能力，加密方式确保数据安全。合理搭配可模拟正常流量特征，同时保障传输安全，有助于在封锁严格环境下维持节点可用性和稳定连接。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 VMess over WebSocket 适合什么场景？</h5></div>
+    <div class="panel-heading"><h5>VMess 使用 TLS+WebSocket 的好处是什么？</h5></div>
     <div class="panel-body">
-        VMess over WebSocket 可以伪装成正常的 Web 流量，适用于被封锁较严格的网络环境。它通过将代理流量嵌入 WebSocket 协议中，使流量更难被检测和拦截。<hr />    </div>
+        TLS+WebSocket 可伪装成正常 HTTPS 流量，增强抗封锁能力和隐蔽性。结合域名伪装和策略组使用，可在高封锁网络环境下保持安全、稳定和高速的网络访问体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 可以导入哪些格式的规则文件？</h5></div>
@@ -279,9 +279,19 @@ Shadowrocket的界面设计简洁清晰，操作简单易懂。即使是没有�
         Surfboard 支持 YAML 和部分 JSON 格式的规则文件，用户可以导入节点、策略组和分流规则。注意文件格式和语法必须符合 Surfboard 规范，否则可能导入失败。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 TLS+WebSocket 的好处是什么？</h5></div>
+    <div class="panel-heading"><h5>Trojan 服务器如何防止被扫描到真实 IP？</h5></div>
     <div class="panel-body">
-        TLS+WebSocket 可伪装成正常 HTTPS 流量，增强抗封锁能力和隐蔽性。结合域名伪装和策略组使用，可在高封锁网络环境下保持安全、稳定和高速的网络访问体验。<hr />    </div>
+        可以把 Trojan 部署在反向代理或 CDN 后端，使用 CDN 的中转与域名伪装；同时避免在服务器上暴露其他与域名不匹配的服务，关闭 FTP/SSH 直连并设置防火墙白名单。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 VMess over WebSocket 适合什么场景？</h5></div>
+    <div class="panel-body">
+        VMess over WebSocket 可以伪装成正常的 Web 流量，适用于被封锁较严格的网络环境。它通过将代理流量嵌入 WebSocket 协议中，使流量更难被检测和拦截。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 代理有什么区别？</h5></div>
+    <div class="panel-body">
+        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理通常只影响指定应用。TUN 更适合全局加速，如游戏、视频和浏览器流量，提高网络稳定性和覆盖范围。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 节点使用 AEAD 加密有何优势？</h5></div>
@@ -294,19 +304,9 @@ Shadowrocket的界面设计简洁清晰，操作简单易懂。即使是没有�
         SSR 的 obfs 模块通过模拟常见流量特征（如 HTTPS 或 HTTP 请求头）来掩盖加密流量。这样可让代理流量看起来像正常的网页访问，从而有效降低被检测和封锁的风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的协议插件与加密方式如何搭配使用？</h5></div>
-    <div class="panel-body">
-        协议插件可增强抗封锁能力，加密方式确保数据安全。合理搭配可模拟正常流量特征，同时保障传输安全，有助于在封锁严格环境下维持节点可用性和稳定连接。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 节点延迟检测对视频流量有何作用？</h5></div>
     <div class="panel-body">
-        WinXray 会定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证视频流量通过低延迟节点，减少缓冲和卡顿，提高播放流畅度和体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 支持哪些内核？</h5></div>
-    <div class="panel-body">
-        PassWall2 支持多种代理内核，如 Xray、V2Ray、Sing-box、Trojan-go、Hysteria2 等。用户可在插件管理中切换所需内核，以获得不同协议与性能的支持。部分内核需手动下载并启用。    </div>
+        WinXray 会定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证视频流量通过低延迟节点，减少缓冲和卡顿，提高播放流畅度和体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -335,16 +335,16 @@ Shadowrocket的界面设计简洁清晰，操作简单易懂。即使是没有�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-31-free-clash-subscribe.htm" title="10月31日 | 最新Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐">10月31日 | 最新Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-23-shadowrocket-node.htm" title="10月23日 | 最新Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点高速免费节点，最高速度20.7M/S，安卓Clash机场推荐">10月23日 | 最新Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点高速免费节点，最高速度20.7M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-27-shadowrocket-node.htm" title="10月27日 | 最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度22.9M/S，安卓Clash机场推荐">10月27日 | 最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度22.9M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-6-free-node-subscribe-links.htm" title="10月6日 | 最新Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点高速免费节点，最高速度22.5M/S，安卓Clash机场推荐">10月6日 | 最新Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点高速免费节点，最高速度22.5M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-3-free-clash.htm" title="11月3日 | 最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">11月3日 | 最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-14-free-ssr-subscribe.htm" title="10月14日 | 最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点高速免费节点，最高速度18.3M/S，安卓Clash机场推荐">10月14日 | 最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点高速免费节点，最高速度18.3M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-13-clash-v2ray-ss-ssr.htm" title="10月13日 | 最新Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点高速免费节点，最高速度21.7M/S，安卓Clash机场推荐">10月13日 | 最新Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点高速免费节点，最高速度21.7M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-22-free-ssr-subscribe.htm" title="10月22日 | 最新Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐">10月22日 | 最新Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-clash-v2ray-ss-ssr.htm" title="10月8日 | 最新V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点高速免费节点，最高速度19.9M/S，安卓Clash机场推荐">10月8日 | 最新V2ray节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点高速免费节点，最高速度19.9M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-4-free-subscribe-node.htm" title="10月4日 | 最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度20.5M/S，安卓Clash机场推荐">10月4日 | 最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度20.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-11-free-shadowrocket-node.htm" title="11月11日 | 最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度20.1M/S，安卓Clash机场推荐">11月11日 | 最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度20.1M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-23-free-shadowrocket-node.htm" title="11月23日 | 最新Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐">11月23日 | 最新Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-1-node-share.htm" title="12月1日 | 最新Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点高速免费节点，最高速度20.3M/S，安卓Clash机场推荐">12月1日 | 最新Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点高速免费节点，最高速度20.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-2-free-node-subscribe.htm" title="12月2日 | 最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点高速免费节点，最高速度22.7M/S，安卓Clash机场推荐">12月2日 | 最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点高速免费节点，最高速度22.7M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-free-ssr-node.htm" title="11月10日 | 最新SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点高速免费节点，最高速度22.9M/S，安卓Clash机场推荐">11月10日 | 最新SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点高速免费节点，最高速度22.9M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-14-free-clash.htm" title="11月14日 | 最新Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">11月14日 | 最新Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-27-clash-node-daily-updates.htm" title="11月27日 | 最新Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐">11月27日 | 最新Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-20-free-clash-subscribe.htm" title="11月20日 | 最新V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点高速免费节点，最高速度22.2M/S，安卓Clash机场推荐">11月20日 | 最新V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点高速免费节点，最高速度22.2M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-free-clash.htm" title="11月9日 | 最新Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点高速免费节点，最高速度18M/S，安卓Clash机场推荐">11月9日 | 最新Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点高速免费节点，最高速度18M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-v2ray.htm" title="11月5日 | 最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点高速免费节点，最高速度20.5M/S，安卓Clash机场推荐">11月5日 | 最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点高速免费节点，最高速度20.5M/S，安卓Clash机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -356,10 +356,10 @@ Shadowrocket的界面设计简洁清晰，操作简单易懂。即使是没有�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>

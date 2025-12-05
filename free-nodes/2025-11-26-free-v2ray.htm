@@ -235,19 +235,9 @@ VPN通过建立加密的隧道，将用户流量通过安全服务器转发，�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何为游戏流量提供加速？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的节点测速结果会自动更新吗？</h5></div>
     <div class="panel-body">
-        Netch 支持 UDP 转发，可为游戏流量建立高速通道。结合策略组和节点延迟检测，可减少丢包和延迟，保证游戏访问稳定流畅，提高网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 支持订阅更新吗？</h5></div>
-    <div class="panel-body">
-        支持。Matsuri 内置订阅更新模块，可自动检测链接变化并定期刷新节点。用户还可手动点击更新按钮同步最新配置，保持网络连接的可用性与速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 如何通过节点测速自动切换最优线路？</h5></div>
-    <div class="panel-body">
-        WinXray 会定期检测节点延迟和丢包率，并结合策略组自动选择最佳节点。保证网页浏览、视频播放和游戏流量走低延迟节点，提高访问速度和网络稳定性。<hr />    </div>
+        PassWall2 可设置定期自动测速节点，更新延迟和可用性。结合策略组自动选择最优节点，可确保用户使用网络时始终连接到速度最快、最稳定的节点。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 的订阅更新机制如何运作？</h5></div>
@@ -255,14 +245,14 @@ VPN通过建立加密的隧道，将用户流量通过安全服务器转发，�
         Nekoray 可以通过远程订阅 URL 自动下载最新节点和规则文件。用户可以设置更新频率，程序会定时检测并替换旧节点，保持配置最新状态。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 QUIC 传输模式有哪些优势？</h5></div>
+    <div class="panel-body">
+        QUIC 传输减少握手次数，支持多路复用和 UDP 基础，降低延迟并提高吞吐量。在不稳定或高丢包环境下，QUIC 可保证视频、游戏或即时通讯的稳定性和流畅体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray QUIC 模式在高丢包网络中的优势？</h5></div>
     <div class="panel-body">
         QUIC 基于 UDP 协议，支持多路复用和零握手，可减少延迟和丢包。适合视频、游戏和即时通讯等高丢包环境，保证访问稳定性和速度，提高整体体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 支持节点订阅的自动更新吗？</h5></div>
-    <div class="panel-body">
-        支持。用户可通过订阅 URL 批量更新节点，程序会自动下载并替换旧节点。定期自动更新可保证节点列表始终有效，减少手动维护的工作量，提高使用效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 是否可以管理多客户端节点？</h5></div>
@@ -270,19 +260,29 @@ VPN通过建立加密的隧道，将用户流量通过安全服务器转发，�
         可以。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。结合策略组使用，可灵活分配节点，实现多客户端管理和流量优化。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的节点测速结果会自动更新吗？</h5></div>
+    <div class="panel-heading"><h5>Nekoray 支持节点订阅的自动更新吗？</h5></div>
     <div class="panel-body">
-        PassWall2 可设置定期自动测速节点，更新延迟和可用性。结合策略组自动选择最优节点，可确保用户使用网络时始终连接到速度最快、最稳定的节点。<hr />    </div>
+        支持。用户可通过订阅 URL 批量更新节点，程序会自动下载并替换旧节点。定期自动更新可保证节点列表始终有效，减少手动维护的工作量，提高使用效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 QUIC 传输模式有哪些优势？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 支持订阅更新吗？</h5></div>
     <div class="panel-body">
-        QUIC 传输减少握手次数，支持多路复用和 UDP 基础，降低延迟并提高吞吐量。在不稳定或高丢包环境下，QUIC 可保证视频、游戏或即时通讯的稳定性和流畅体验。<hr />    </div>
+        支持。Matsuri 内置订阅更新模块，可自动检测链接变化并定期刷新节点。用户还可手动点击更新按钮同步最新配置，保持网络连接的可用性与速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 如何为游戏流量提供加速？</h5></div>
+    <div class="panel-body">
+        Netch 支持 UDP 转发，可为游戏流量建立高速通道。结合策略组和节点延迟检测，可减少丢包和延迟，保证游戏访问稳定流畅，提高网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 支持节点手动导入和修改吗？</h5></div>
     <div class="panel-body">
-        支持。用户可以手动输入节点信息或通过扫描二维码导入节点，并进行修改或删除。虽然不支持自动订阅更新，但足以满足轻量级用户对节点管理和分流的需求。    </div>
+        支持。用户可以手动输入节点信息或通过扫描二维码导入节点，并进行修改或删除。虽然不支持自动订阅更新，但足以满足轻量级用户对节点管理和分流的需求。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 如何通过节点测速自动切换最优线路？</h5></div>
+    <div class="panel-body">
+        WinXray 会定期检测节点延迟和丢包率，并结合策略组自动选择最佳节点。保证网页浏览、视频播放和游戏流量走低延迟节点，提高访问速度和网络稳定性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -311,16 +311,16 @@ VPN通过建立加密的隧道，将用户流量通过安全服务器转发，�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-23-shadowrocket-node.htm" title="10月23日 | 最新Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点高速免费节点，最高速度20.7M/S，安卓Clash机场推荐">10月23日 | 最新Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点高速免费节点，最高速度20.7M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-14-free-clash.htm" title="11月14日 | 最新Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">11月14日 | 最新Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-12-node-share-links.htm" title="11月12日 | 最新Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点高速免费节点，最高速度18.9M/S，安卓Clash机场推荐">11月12日 | 最新Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点高速免费节点，最高速度18.9M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-3-node-share.htm" title="12月3日 | 最新Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度21.3M/S，安卓Clash机场推荐">12月3日 | 最新Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度21.3M/S，安卓Clash机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-27-clash-node-daily-updates.htm" title="11月27日 | 最新Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐">11月27日 | 最新Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-28-shadowrocket-node.htm" title="11月28日 | 最新SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点高速免费节点，最高速度21.4M/S，安卓Clash机场推荐">11月28日 | 最新SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点高速免费节点，最高速度21.4M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-17-free-v2ray.htm" title="11月17日 | 最新Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐">11月17日 | 最新Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-14-free-clash.htm" title="11月14日 | 最新Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">11月14日 | 最新Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-free-v2ray.htm" title="11月19日 | 最新Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点高速免费节点，最高速度20.3M/S，安卓Clash机场推荐">11月19日 | 最新Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点高速免费节点，最高速度20.3M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-30-free-shadowrocket-node.htm" title="11月30日 | 最新Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点高速免费节点，最高速度20.9M/S，安卓Clash机场推荐">11月30日 | 最新Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点高速免费节点，最高速度20.9M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-1-node-share.htm" title="12月1日 | 最新Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点高速免费节点，最高速度20.3M/S，安卓Clash机场推荐">12月1日 | 最新Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点高速免费节点，最高速度20.3M/S，安卓Clash机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-6-free-subscribe-node.htm" title="11月6日 | 最新SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点高速免费节点，最高速度18.1M/S，安卓Clash机场推荐">11月6日 | 最新SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点高速免费节点，最高速度18.1M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-7-clash-node.htm" title="10月7日 | 最新Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">10月7日 | 最新Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-18-shadowrocket-node.htm" title="10月18日 | 最新V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点高速免费节点，最高速度18.6M/S，安卓Clash机场推荐">10月18日 | 最新V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点高速免费节点，最高速度18.6M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-3-free-clash.htm" title="11月3日 | 最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">11月3日 | 最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-9-free-v2ray.htm" title="10月9日 | 最新V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点高速免费节点，最高速度21.7M/S，安卓Clash机场推荐">10月9日 | 最新V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点高速免费节点，最高速度21.7M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-free-clash.htm" title="11月9日 | 最新Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点高速免费节点，最高速度18M/S，安卓Clash机场推荐">11月9日 | 最新Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点高速免费节点，最高速度18M/S，安卓Clash机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-22-free-shadowrocket-node.htm" title="11月22日 | 最新Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点高速免费节点，最高速度19.1M/S，安卓Clash机场推荐">11月22日 | 最新Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点高速免费节点，最高速度19.1M/S，安卓Clash机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -332,10 +332,10 @@ VPN通过建立加密的隧道，将用户流量通过安全服务器转发，�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
