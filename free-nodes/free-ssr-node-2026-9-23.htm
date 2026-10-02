@@ -163,6 +163,11 @@ ufw <span class="token builtin class-name">enable</span></pre></div></li><li><p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 使用 TLS+WebSocket 的好处是什么？</h5></div>
+    <div class="panel-body">
+        TLS+WebSocket 可伪装成正常 HTTPS 流量，增强抗封锁能力和隐蔽性。结合域名伪装和策略组使用，可在高封锁网络环境下保持安全、稳定和高速的网络访问体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的 WebSocket 传输与 TCP 有何区别？</h5></div>
     <div class="panel-body">
         WebSocket 通过 HTTP 封装 TCP 流量，适合伪装成正常网页请求，增加隐蔽性。相比原生 TCP，可更好地绕过封锁和 DPI 检测，但略增加协议开销。<hr />    </div>
@@ -183,9 +188,9 @@ ufw <span class="token builtin class-name">enable</span></pre></div></li><li><p>
         在 Mellow 中可通过开启 TUN 模式来启用全局代理。启用后，系统的所有流量都会经过代理转发，可实现全面科学上网。需注意系统防火墙可能会提示权限请求。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 TLS+WebSocket 的好处是什么？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 模式相比普通 VLESS 有哪些优势？</h5></div>
     <div class="panel-body">
-        TLS+WebSocket 可伪装成正常 HTTPS 流量，增强抗封锁能力和隐蔽性。结合域名伪装和策略组使用，可在高封锁网络环境下保持安全、稳定和高速的网络访问体验。<hr />    </div>
+        XTLS 模式减少冗余加密开销，提高传输效率，并在多连接高负载环境下表现更佳。同时仍保持 TLS 安全性，结合策略组可实现高性能和高隐蔽性的双重优势。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Quantumult X 中自定义脚本导致规则异常，该如何恢复？</h5></div>
@@ -198,19 +203,14 @@ ufw <span class="token builtin class-name">enable</span></pre></div></li><li><p>
         检查 inbound 配置是否包含正确的 port、protocol 与 listen 字段；确认没有端口冲突或权限问题（非 root 绑定 1024 以下端口会失败）；查看日志中具体错误信息并根据提示修复配置。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 如何在高延迟网络中优化连接？</h5></div>
-    <div class="panel-body">
-        XTLS 模式通过减少握手和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定网络环境下保证网页浏览、视频播放和游戏连接稳定，提高整体体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式相比普通 VLESS 有哪些优势？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少冗余加密开销，提高传输效率，并在多连接高负载环境下表现更佳。同时仍保持 TLS 安全性，结合策略组可实现高性能和高隐蔽性的双重优势。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 的 Web 面板有什么用途？</h5></div>
     <div class="panel-body">
-        Hiddify Next 自带 Web 管理面板，管理员可通过浏览器管理用户、监控流量、生成订阅链接并部署节点。无需命令行操作，极大提高管理效率。    </div>
+        Hiddify Next 自带 Web 管理面板，管理员可通过浏览器管理用户、监控流量、生成订阅链接并部署节点。无需命令行操作，极大提高管理效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 如何在高延迟网络中优化连接？</h5></div>
+    <div class="panel-body">
+        XTLS 模式通过减少握手和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定网络环境下保证网页浏览、视频播放和游戏连接稳定，提高整体体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -258,16 +258,16 @@ ufw <span class="token builtin class-name">enable</span></pre></div></li><li><p>
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-24-free-node-subscribe.htm" title="9月24日 | 最新Singbox节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐">9月24日 | 最新Singbox节点/Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点高速免费节点，最高速度21.5M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-8-27.htm" title="8月27日 | 最新Clash节点/V2ray节点/SSR节点/Trojan节点/Singbox节点/Shadowrocket节点高速免费节点，最高速度21.3M/S，安卓Clash机场推荐">8月27日 | 最新Clash节点/V2ray节点/SSR节点/Trojan节点/Singbox节点/Shadowrocket节点高速免费节点，最高速度21.3M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-9-9.htm" title="9月9日 | 最新V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点高速免费节点，最高速度23M/S，安卓Clash机场推荐">9月9日 | 最新V2ray节点/SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点高速免费节点，最高速度23M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-28-free-ssr-subscribe.htm" title="8月28日 | 最新SSR节点/V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐">8月28日 | 最新SSR节点/V2ray节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点高速免费节点，最高速度21.1M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-9-21.htm" title="9月21日 | 最新Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点高速免费节点，最高速度22.8M/S，安卓Clash机场推荐">9月21日 | 最新Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点高速免费节点，最高速度22.8M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-16-clash-v2ray-ss-ssr.htm" title="8月16日 | 最新Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点高速免费节点，最高速度22.6M/S，安卓Clash机场推荐">8月16日 | 最新Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点高速免费节点，最高速度22.6M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-25.htm" title="8月25日 | 最新SSR节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度22.6M/S，安卓Clash机场推荐">8月25日 | 最新SSR节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/Singbox节点高速免费节点，最高速度22.6M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-17.htm" title="8月17日 | 最新V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">8月17日 | 最新V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-20-free-clash.htm" title="9月20日 | 最新Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/Trojan节点/SSR节点高速免费节点，最高速度20.1M/S，安卓Clash机场推荐">9月20日 | 最新Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/Trojan节点/SSR节点高速免费节点，最高速度20.1M/S，安卓Clash机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-16-free-clash.htm" title="9月16日 | 最新Trojan节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点高速免费节点，最高速度18.8M/S，安卓Clash机场推荐">9月16日 | 最新Trojan节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点高速免费节点，最高速度18.8M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-28-clash-node.htm" title="9月28日 | 最新V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点高速免费节点，最高速度22.5M/S，安卓Clash机场推荐">9月28日 | 最新V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点高速免费节点，最高速度22.5M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-9-7.htm" title="9月7日 | 最新Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度19.8M/S，安卓Clash机场推荐">9月7日 | 最新Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度19.8M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-9-25.htm" title="9月25日 | 最新Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐">9月25日 | 最新Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点高速免费节点，最高速度20.6M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-9-13.htm" title="9月13日 | 最新SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点高速免费节点，最高速度19.3M/S，安卓Clash机场推荐">9月13日 | 最新SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点高速免费节点，最高速度19.3M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-22-free-shadowrocket-node.htm" title="9月22日 | 最新V2ray节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点高速免费节点，最高速度22.1M/S，安卓Clash机场推荐">9月22日 | 最新V2ray节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点高速免费节点，最高速度22.1M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-10-1.htm" title="10月1日 | 最新Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度18M/S，安卓Clash机场推荐">10月1日 | 最新Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点高速免费节点，最高速度18M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-14-free-node-subscribe.htm" title="9月14日 | 最新SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点高速免费节点，最高速度22.4M/S，安卓Clash机场推荐">9月14日 | 最新SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点高速免费节点，最高速度22.4M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-18-free-ssr-subscribe.htm" title="9月18日 | 最新V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点高速免费节点，最高速度18.2M/S，安卓Clash机场推荐">9月18日 | 最新V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点高速免费节点，最高速度18.2M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-clash-node-daily-updates.htm" title="9月4日 | 最新Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Trojan节点高速免费节点，最高速度18.7M/S，安卓Clash机场推荐">9月4日 | 最新Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Trojan节点高速免费节点，最高速度18.7M/S，安卓Clash机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-9-3.htm" title="9月3日 | 最新Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐">9月3日 | 最新Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点高速免费节点，最高速度19.6M/S，安卓Clash机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -279,10 +279,10 @@ ufw <span class="token builtin class-name">enable</span></pre></div></li><li><p>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                     </ul>
     </div>
